@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | City Institute of Higher Learning | Institut Supérieur de la Ville | 活动 | Eventos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/events.css">
+     <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="City Institute of Higher Learning Logo" class="logo-img">
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" data-en="Home" data-fr="Accueil" data-zh="首页" data-es="Inicio">Home</a></li>
+                    <li><a href="about.html" data-en="About" data-fr="À propos" data-zh="关于我们" data-es="Acerca de">About</a></li>
+                    <li><a href="programs.html" data-en="Programmess" data-fr="Programmes" data-zh="课程项目" data-es="Programas">Programs</a></li>
+                    <li><a href="research.html" data-en="Research" data-fr="Recherche" data-zh="研究" data-es="Investigación">Research</a></li>
+                    <li><a href="events.html" class="active" data-en="Events" data-fr="Événements" data-zh="活动" data-es="Eventos">Events</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-zh="联系我们" data-es="Contacto">Contact</a></li>
+                    <li><a href="contact.html#apply-form" class="apply-btn" data-en="Apply Now" data-fr="Postuler" data-zh="立即申请" data-es="Aplicar Ahora">Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Events Hero -->
+    <section class="events-hero">
+        <div class="container">
+            <h1 data-en="Events at C-IHL" 
+                data-fr="Événements à C-IHL" 
+                data-zh="C-IHL活动" 
+                data-es="Eventos en C-IHL">
+                Events at C-IHL
+            </h1>
+            <div class="hero-description">
+                <p data-en="Join our vibrant campus community through engaging events, workshops, and cultural activities. Stay connected with the latest happenings at City Institute of Higher Learning."
+                   data-fr="Rejoignez notre communauté universitaire dynamique grâce à des événements, des ateliers et des activités culturelles engageants. Restez connecté avec les dernières actualités de l'Institut Supérieur de la Ville."
+                   data-zh="通过引人入胜的活动、研讨会和文化活动，加入我们充满活力的校园社区。随时了解城市高等学习学院的最新动态。"
+                   data-es="Únase a nuestra vibrante comunidad universitaria a través de eventos, talleres y actividades culturales atractivas. Manténgase conectado con los últimos acontecimientos en el Instituto Superior de la Ciudad.">
+                   Join our vibrant campus community through engaging events, workshops, and cultural activities. Stay connected with the latest happenings at City Institute of Higher Learning.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Tabs Navigation -->
+    <div class="events-tabs">
+        <div class="container">
+            <div class="tabs-container">
+                <button class="events-tab active" data-tab="featured">
+                    <i class="fas fa-star"></i>
+                    <span data-en="Featured Event" data-fr="Événement en Vedette" data-zh="特色活动" data-es="Evento Destacado">Featured Event</span>
+                </button>
+                <button class="events-tab" data-tab="upcoming">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span data-en="Upcoming Events" data-fr="Événements à Venir" data-zh="即将举行的活动" data-es="Próximos Eventos">Upcoming Events</span>
+                </button>
+                <button class="events-tab" data-tab="calendar">
+                    <i class="fas fa-calendar"></i>
+                    <span data-en="Event Calendar" data-fr="Calendrier des Événements" data-zh="活动日历" data-es="Calendario de Eventos">Event Calendar</span>
+                </button>
+                <button class="events-tab" data-tab="archive">
+                    <i class="fas fa-archive"></i>
+                    <span data-en="Past Events" data-fr="Événements Passés" data-zh="过往活动" data-es="Eventos Pasados">Past Events</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Events Content Sections -->
+    <div class="container">
+        <!-- Featured Event Section -->
+        <section class="events-section active" id="featured">
+            <div class="featured-event-section">
+                <div class="section-header">
+                    <h2 data-en="Featured Event" data-fr="Événement en Vedette" data-zh="特色活动" data-es="Evento Destacado">Featured Event</h2>
+                    <div class="section-subtitle">
+                        <p data-en="Don't miss our most anticipated event of the year"
+                           data-fr="Ne manquez pas notre événement le plus attendu de l'année"
+                           data-zh="不要错过我们今年最受期待的活动"
+                           data-es="No se pierda nuestro evento más esperado del año">
+                           Don't miss our most anticipated event of the year
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CITY Research Series Featured Event -->
+                <div class="featured-event">
+                    <div class="featured-content">
+                        <div class="featured-badge">
+                            <span data-en="Featured Event" data-fr="Événement en Vedette" data-zh="特色活动" data-es="Evento Destacado">Featured Event</span>
+                        </div>
+                        
+                        <h2 class="featured-title" data-en="CITY RESEARCH SERIES" data-fr="SÉRIE DE RECHERCHE CITY" data-zh="城市研究系列" data-es="SERIE DE INVESTIGACIÓN CITY">CITY RESEARCH SERIES</h2>
+                        
+                        <div class="featured-subtitle">
+                            <span data-en="With Prof Maria Kordowicz" data-fr="Avec la Prof Maria Kordowicz" data-zh="与Maria Kordowicz教授" data-es="Con la Prof. Maria Kordowicz">With Prof Maria Kordowicz</span>
+                            <span data-en="Professor of Organisational Psychology, Regent's University London" data-fr="Professeure de Psychologie Organisationnelle, Université Regent's de Londres" data-zh="组织心理学教授，伦敦摄政大学" data-es="Profesora de Psicología Organizacional, Universidad Regent's de Londres">Professor of Organisational Psychology, Regent's University London</span>
+                        </div>
+                        
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>
+                                    <strong data-en="Date & Time" data-fr="Date & Heure" data-zh="日期与时间" data-es="Fecha y Hora">Date & Time</strong>
+                                    <p data-en="Tuesday, 2nd December 2025<br>3pm UK Time / 11am Moncton, Canada" data-fr="Mardi 2 décembre 2025<br>15h Heure UK / 11h Moncton, Canada" data-zh="2025年12月2日 星期二<br>英国时间下午3点 / 加拿大蒙克顿上午11点" data-es="Martes 2 de diciembre de 2025<br>15h hora del Reino Unido / 11h Moncton, Canadá">Tuesday, 2nd December 2025<br>3pm UK Time / 11am Moncton, Canada</p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-video"></i>
+                                <div>
+                                    <strong data-en="Format" data-fr="Format" data-zh="形式" data-es="Formato">Format</strong>
+                                    <p data-en="Online Session via LinkedIn" data-fr="Session en ligne via LinkedIn" data-zh="通过LinkedIn在线会议" data-es="Sesión en línea vía LinkedIn">Online Session via LinkedIn</p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-link"></i>
+                                <div>
+                                    <strong data-en="Join Link" data-fr="Lien de participation" data-zh="加入链接" data-es="Enlace de participación">Join Link</strong>
+                                    <p><a href="https://lnkd.in/eT8BuxrG" target="_blank" class="event-link">https://lnkd.in/eT8BuxrG</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-description">
+                            <h3 data-en="Main Topic: 'Redundant? The Case of English Universities'" data-fr="Sujet principal : 'Redundant? Le cas des universités anglaises'" data-zh="主题：'冗余？英国大学案例'" data-es="Tema principal: '¿Redundante? El caso de las universidades inglesas'">Main Topic: "Redundant? The Case of English Universities"</h3>
+                            <div class="description-content">
+                                <p data-en="We are thrilled to present another powerful session in the CITY Research Series, featuring one of the UK's leading voices in organisational psychology, Prof Maria Kordowicz, Professor of Organisational Psychology and Director of Psychology & Research at Regent's University London."
+                                   data-fr="Nous sommes ravis de présenter une autre session importante de la Série de Recherche CITY, avec l'une des voix les plus influentes du Royaume-Uni en psychologie organisationnelle, la Prof Maria Kordowicz, Professeure de Psychologie Organisationnelle et Directrice de la Psychologie et de la Recherche à l'Université Regent's de Londres."
+                                   data-zh="我们很高兴在CITY研究系列中推出另一个重要会议，特邀英国组织心理学领域的领军人物之一，伦敦摄政大学组织心理学教授、心理学与研究主任Maria Kordowicz教授。"
+                                   data-es="Nos complace presentar otra sesión importante en la Serie de Investigación CITY, con una de las voces líderes del Reino Unido en psicología organizacional, la Prof. Maria Kordowicz, Profesora de Psicología Organizacional y Directora de Psicología e Investigación en la Universidad Regent's de Londres.">
+                                   We are thrilled to present another powerful session in the CITY Research Series, featuring one of the UK's leading voices in organisational psychology, Prof Maria Kordowicz, Professor of Organisational Psychology and Director of Psychology & Research at Regent's University London.
+                                </p>
+                                
+                                <div class="event-theme">
+                                    <strong data-en="Theme" data-fr="Thème" data-zh="主题" data-es="Tema">Theme</strong>
+                                    <p data-en="Exploring the Impact on Academic Identities and Wellbeing" data-fr="Explorer l'impact sur les identités académiques et le bien-être" data-zh="探索对学术身份和福祉的影响" data-es="Explorando el Impacto en las Identidades Académicas y el Bienestar">Exploring the Impact on Academic Identities and Wellbeing</p>
+                                </div>
+                                
+                                <p data-en="Professor Kordowicz will examine the challenges facing universities today, using English institutions as a compelling case study, from shifting organisational demands to their effects on academic identity, purpose, and wellbeing. This session offers vital insight and reflection for academics, students, policymakers, and anyone invested in higher education's future."
+                                   data-fr="La Professeure Kordowicz examinera les défis auxquels sont confrontées les universités aujourd'hui, en utilisant les institutions anglaises comme étude de cas convaincante, des demandes organisationnelles changeantes à leurs effets sur l'identité académique, le but et le bien-être. Cette session offre des perspectives et réflexions vitales pour les universitaires, étudiants, décideurs politiques et toute personne investie dans l'avenir de l'enseignement supérieur."
+                                   data-zh="Kordowicz教授将以英国机构为引人注目的案例研究，审视当今大学面临的挑战，从不断变化的组织需求到其对学术身份、目标和福祉的影响。本次会议为学术界、学生、政策制定者以及任何关心高等教育未来的人士提供了重要的见解和反思。"
+                                   data-es="La Prof. Kordowicz examinará los desafíos que enfrentan las universidades hoy en día, utilizando las instituciones inglesas como un estudio de caso convincente, desde las cambiantes demandas organizacionales hasta sus efectos en la identidad académica, el propósito y el bienestar. Esta sesión ofrece una visión vital y reflexión para académicos, estudiantes, formuladores de políticas y cualquier persona interesada en el futuro de la educación superior.">
+                                   Professor Kordowicz will examine the challenges facing universities today, using English institutions as a compelling case study, from shifting organisational demands to their effects on academic identity, purpose, and wellbeing. This session offers vital insight and reflection for academics, students, policymakers, and anyone invested in higher education's future.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="featured-event-actions">
+                            <a href="https://lnkd.in/eT8BuxrG" target="_blank" class="btn-primary" data-en="Join Online Session" data-fr="Rejoindre la session en ligne" data-zh="加入在线会议" data-es="Unirse a Sesión en Línea">Join Online Session</a>
+                            <a href="#" class="btn-secondary" data-en="Add to Calendar" data-fr="Ajouter au calendrier" data-zh="添加到日历" data-es="Agregar al Calendario">Add to Calendar</a>
+                        </div>
+                    </div>
+                    
+                    <div class="featured-image">
+                        <img src="images/c-img1.jpg" alt="CITY Research Series with Prof Maria Kordowicz" class="featured-img">
+                        <div class="image-caption">
+                            <span data-en="Prof Maria Kordowicz" data-fr="Prof Maria Kordowicz" data-zh="Maria Kordowicz教授" data-es="Prof. Maria Kordowicz">Prof Maria Kordowicz</span>
+                            <small data-en="Professor of Organisational Psychology" data-fr="Professeure de Psychologie Organisationnelle" data-zh="组织心理学教授" data-es="Profesora de Psicología Organizacional">Professor of Organisational Psychology</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration CTA -->
+            <div class="registration-cta">
+                <div class="cta-content">
+                    <h2 data-en="Stay Updated with Our Events" data-fr="Restez Informé de Nos Événements" data-zh="随时了解我们的活动" data-es="Manténgase Actualizado con Nuestros Eventos">Stay Updated with Our Events</h2>
+                    <div class="cta-description">
+                        <p data-en="Subscribe to our newsletter to receive updates about upcoming events, workshops, and seminars at C-IHL."
+                           data-fr="Abonnez-vous à notre newsletter pour recevoir des mises à jour sur les événements, ateliers et séminaires à venir à C-IHL."
+                           data-zh="订阅我们的新闻通讯，接收有关C-IHL即将举办的活动、研讨会和讲座的更新信息。"
+                           data-es="Suscríbase a nuestro boletín para recibir actualizaciones sobre próximos eventos, talleres y seminarios en C-IHL.">
+                           Subscribe to our newsletter to receive updates about upcoming events, workshops, and seminars at C-IHL.
+                        </p>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="btn-secondary" data-en="Subscribe to Newsletter" data-fr="S'abonner à la Newsletter" data-zh="订阅新闻通讯" data-es="Suscribirse al Boletín">Subscribe to Newsletter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events Section -->
+        <section class="events-section" id="upcoming">
+            <div class="upcoming-events">
+                <div class="section-header">
+                    <h2 data-en="Upcoming Events" data-fr="Événements à Venir" data-zh="即将举行的活动" data-es="Próximos Eventos">Upcoming Events</h2>
+                    <div class="section-subtitle">
+                        <p data-en="Discover what's happening next at C-IHL"
+                           data-fr="Découvrez ce qui se passe ensuite à C-IHL"
+                           data-zh="发现C-IHL接下来会发生什么"
+                           data-es="Descubra lo que sucede a continuación en C-IHL">
+                           Discover what's happening next at C-IHL
+                        </p>
+                    </div>
+                </div>
+
+                <div class="events-filter">
+                    <button class="filter-btn active" data-filter="all" data-en="All Events" data-fr="Tous les Événements" data-zh="所有活动" data-es="Todos los Eventos">All Events</button>
+                    <button class="filter-btn" data-filter="academic" data-en="Academic Events" data-fr="Événements Académiques" data-zh="学术活动" data-es="Eventos Académicos">Academic Events</button>
+                    <button class="filter-btn" data-filter="workshop" data-en="Workshops" data-fr="Ateliers" data-zh="研讨会" data-es="Talleres">Workshops</button>
+                    <button class="filter-btn" data-filter="social" data-en="Social Events" data-fr="Événements Sociaux" data-zh="社交活动" data-es="Eventos Sociales">Social Events</button>
+                    <button class="filter-btn" data-filter="research" data-en="Research Series" data-fr="Séries de Recherche" data-zh="研究系列" data-es="Series de Investigación">Research Series</button>
+                </div>
+
+                <div class="events-grid">
+                    <!-- Event 1 - Open House -->
+                    <div class="event-card" data-category="academic social">
+                        <div class="event-image">
+                            <img src="images/open-house.jpg" alt="Open House 2024" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <div class="event-date">
+                                <i class="far fa-calendar"></i>
+                                <span data-en="March 15, 2024" data-fr="15 Mars 2024" data-zh="2024年3月15日" data-es="15 de Marzo 2024">March 15, 2024</span>
+                            </div>
+                            <h3 class="event-title" data-en="Open House 2024" data-fr="Portes Ouvertes 2024" data-zh="2024开放日" data-es="Casa Abierta 2024">Open House 2024</h3>
+                            <div class="event-description">
+                                <p data-en="Explore our campus, meet faculty, and discover your future at C-IHL. Learn about our programs, research opportunities, and student life."
+                                   data-fr="Explorez notre campus, rencontrez les professeurs et découvrez votre avenir à C-IHL. Découvrez nos programmes, opportunités de recherche et vie étudiante."
+                                   data-zh="探索我们的校园，与教师会面，在C-IHL发现您的未来。了解我们的课程、研究机会和学生生活。"
+                                   data-es="Explore nuestro campus, conozca a la facultad y descubra su futuro en C-IHL. Conozca nuestros programas, oportunidades de investigación y vida estudiantil.">
+                                   Explore our campus, meet faculty, and discover your future at C-IHL. Learn about our programs, research opportunities, and student life.
+                                </p>
+                            </div>
+                            <div class="event-actions">
+                                <a href="#" class="btn-secondary" data-en="Learn More" data-fr="En Savoir Plus" data-zh="了解更多" data-es="Saber Más">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 - Research Symposium -->
+                    <div class="event-card" data-category="research academic">
+                        <div class="event-image">
+                            <img src="images/research-symposium.jpg" alt="Research Symposium" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <div class="event-date">
+                                <i class="far fa-calendar"></i>
+                                <span data-en="April 3, 2024" data-fr="3 Avril 2024" data-zh="2024年4月3日" data-es="3 de Abril 2024">April 3, 2024</span>
+                            </div>
+                            <h3 class="event-title" data-en="Research Symposium" data-fr="Symposium de Recherche" data-zh="研究研讨会" data-es="Simposio de Investigación">Research Symposium</h3>
+                            <div class="event-description">
+                                <p data-en="Annual showcase of groundbreaking research from students and faculty. Present your research and network with peers and professionals."
+                                   data-fr="Présentation annuelle de recherches innovantes des étudiants et du corps professoral. Présentez votre recherche et réseauter avec des pairs et des professionnels."
+                                   data-zh="学生和教师的突破性研究年度展示。展示您的研究并与同行和专业人士建立联系。"
+                                   data-es="Exhibición anual de investigaciones innovadoras de estudiantes y profesores. Presente su investigación y establezca contactos con colegas y profesionales.">
+                                   Annual showcase of groundbreaking research from students and faculty. Present your research and network with peers and professionals.
+                                </p>
+                            </div>
+                            <div class="event-actions">
+                                <a href="#" class="btn-secondary" data-en="View Details" data-fr="Voir les Détails" data-zh="查看详情" data-es="Ver Detalles">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 - Career Fair -->
+                    <div class="event-card" data-category="workshop social">
+                        <div class="event-image">
+                            <img src="images/career-fair.jpg" alt="Career Fair" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <div class="event-date">
+                                <i class="far fa-calendar"></i>
+                                <span data-en="May 22, 2024" data-fr="22 Mai 2024" data-zh="2024年5月22日" data-es="22 de Mayo 2024">May 22, 2024</span>
+                            </div>
+                            <h3 class="event-title" data-en="Career Fair" data-fr="Salon de l'Emploi" data-zh="招聘会" data-es="Feria de Carreras">Career Fair</h3>
+                            <div class="event-description">
+                                <p data-en="Connect with top employers and explore career opportunities. Prepare your resume and practice your interview skills."
+                                   data-fr="Connectez-vous avec les meilleurs employeurs et explorez des opportunités de carrière. Préparez votre CV et entraînez vos compétences d'entrevue."
+                                   data-zh="与顶级雇主联系，探索职业机会。准备您的简历并练习面试技巧。"
+                                   data-es="Conéctese con los mejores empleadores y explore oportunidades profesionales. Prepare su currículum y practique sus habilidades de entrevista.">
+                                   Connect with top employers and explore career opportunities. Prepare your resume and practice your interview skills.
+                                </p>
+                            </div>
+                            <div class="event-actions">
+                                <a href="#" class="btn-secondary" data-en="Register Now" data-fr="S'Inscrire" data-zh="立即注册" data-es="Registrarse Ahora">Register Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 4 - Language Workshop -->
+                    <div class="event-card" data-category="workshop academic">
+                        <div class="event-image">
+                            <img src="images/language-workshop.jpg" alt="Language Workshop" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <div class="event-date">
+                                <i class="far fa-calendar"></i>
+                                <span data-en="June 10, 2024" data-fr="10 Juin 2024" data-zh="2024年6月10日" data-es="10 de Junio 2024">June 10, 2024</span>
+                            </div>
+                            <h3 class="event-title" data-en="Bilingual Communication Workshop" data-fr="Atelier de Communication Bilingue" data-zh="双语沟通工作坊" data-es="Taller de Comunicación Bilingüe">Bilingual Communication Workshop</h3>
+                            <div class="event-description">
+                                <p data-en="Enhance your bilingual communication skills for professional and academic settings. Open to students, faculty, and community members."
+                                   data-fr="Améliorez vos compétences de communication bilingue pour les contextes professionnels et académiques. Ouvert aux étudiants, professeurs et membres de la communauté."
+                                   data-zh="提升您在专业和学术环境中的双语沟通技能。对学生、教师和社区成员开放。"
+                                   data-es="Mejore sus habilidades de comunicación bilingüe para entornos profesionales y académicos. Abierto a estudiantes, profesores y miembros de la comunidad.">
+                                   Enhance your bilingual communication skills for professional and academic settings. Open to students, faculty, and community members.
+                                </p>
+                            </div>
+                            <div class="event-actions">
+                                <a href="#" class="btn-secondary" data-en="Register Now" data-fr="S'Inscrire" data-zh="立即注册" data-es="Registrarse Ahora">Register Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 5 - Alumni Reunion -->
+                    <div class="event-card" data-category="social">
+                        <div class="event-image">
+                            <img src="images/alumni-reunion.jpg" alt="Alumni Reunion" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <div class="event-date">
+                                <i class="far fa-calendar"></i>
+                                <span data-en="July 5, 2024" data-fr="5 Juillet 2024" data-zh="2024年7月5日" data-es="5 de Julio 2024">July 5, 2024</span>
+                            </div>
+                            <h3 class="event-title" data-en="Annual Alumni Reunion" data-fr="Réunion Annuelle des Anciens" data-zh="年度校友聚会" data-es="Reunión Anual de Antiguos Alumnos">Annual Alumni Reunion</h3>
+                            <div class="event-description">
+                                <p data-en="Reconnect with former classmates and faculty. Share your experiences and network with fellow alumni."
+                                   data-fr="Renouez avec d'anciens camarades de classe et professeurs. Partagez vos expériences et réseauter avec d'autres anciens élèves."
+                                   data-zh="与以前的同学和教师重新联系。分享您的经验并与校友建立联系。"
+                                   data-es="Reconéctese con antiguos compañeros de clase y profesores. Comparta sus experiencias y establezca contactos con otros exalumnos.">
+                                   Reconnect with former classmates and faculty. Share your experiences and network with fellow alumni.
+                                </p>
+                            </div>
+                            <div class="event-actions">
+                                <a href="#" class="btn-secondary" data-en="RSVP Now" data-fr="RSVP Maintenant" data-zh="立即回复" data-es="Confirmar Asistencia">RSVP Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 6 - Entrepreneurship Seminar -->
+                    <div class="event-card" data-category="workshop academic">
+                        <div class="event-image">
+                            <img src="images/entrepreneurship-seminar.jpg" alt="Entrepreneurship Seminar" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <div class="event-date">
+                                <i class="far fa-calendar"></i>
+                                <span data-en="August 15, 2024" data-fr="15 Août 2024" data-zh="2024年8月15日" data-es="15 de Agosto 2024">August 15, 2024</span>
+                            </div>
+                            <h3 class="event-title" data-en="Entrepreneurship Seminar" data-fr="Séminaire d'Entrepreneuriat" data-zh="创业研讨会" data-es="Seminario de Emprendimiento">Entrepreneurship Seminar</h3>
+                            <div class="event-description">
+                                <p data-en="Learn from successful entrepreneurs about starting and growing your own business. Ideal for students and aspiring entrepreneurs."
+                                   data-fr="Apprenez d'entrepreneurs à succès sur le démarrage et la croissance de votre propre entreprise. Idéal pour les étudiants et les entrepreneurs en herbe."
+                                   data-zh="向成功的企业家学习如何创办和发展自己的企业。非常适合学生和有抱负的企业家。"
+                                   data-es="Aprenda de emprendedores exitosos sobre cómo iniciar y hacer crecer su propio negocio. Ideal para estudiantes y aspirantes a emprendedores.">
+                                   Learn from successful entrepreneurs about starting and growing your own business. Ideal for students and aspiring entrepreneurs.
+                                </p>
+                            </div>
+                            <div class="event-actions">
+                                <a href="#" class="btn-secondary" data-en="Learn More" data-fr="En Savoir Plus" data-zh="了解更多" data-es="Saber Más">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-center">
+                    <a href="#calendar" class="btn-primary" data-en="View Full Events Calendar" data-fr="Voir le Calendrier Complet des Événements" data-zh="查看完整活动日历" data-es="Ver Calendario Completo de Eventos">View Full Events Calendar</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Calendar Section -->
+        <section class="events-section" id="calendar">
+            <div class="calendar-section">
+                <div class="section-header">
+                    <h2 data-en="Event Calendar" data-fr="Calendrier des Événements" data-zh="活动日历" data-es="Calendario de Eventos">Event Calendar</h2>
+                    <div class="section-subtitle">
+                        <p data-en="Browse our events by month and mark your calendar"
+                           data-fr="Parcourez nos événements par mois et marquez votre calendrier"
+                           data-zh="按月浏览我们的活动并标记您的日历"
+                           data-es="Explore nuestros eventos por mes y marque su calendario">
+                           Browse our events by month and mark your calendar
+                        </p>
+                    </div>
+                </div>
+
+                <div class="calendar-nav">
+                    <h3 class="calendar-title" data-en="December 2024" data-fr="Décembre 2024" data-zh="2024年12月" data-es="Diciembre 2024">December 2024</h3>
+                    <div class="calendar-controls">
+                        <button class="btn-secondary" data-en="Previous Month" data-fr="Mois Précédent" data-zh="上个月" data-es="Mes Anterior">← Prev</button>
+                        <button class="btn-secondary" data-en="Today" data-fr="Aujourd'hui" data-zh="今天" data-es="Hoy">Today</button>
+                        <button class="btn-secondary" data-en="Next Month" data-fr="Mois Suivant" data-zh="下个月" data-es="Próximo Mes">Next →</button>
+                    </div>
+                </div>
+
+                <div class="calendar-grid">
+                    <div class="calendar-day header" data-en="Sun" data-fr="Dim" data-zh="周日" data-es="Dom">Sun</div>
+                    <div class="calendar-day header" data-en="Mon" data-fr="Lun" data-zh="周一" data-es="Lun">Mon</div>
+                    <div class="calendar-day header" data-en="Tue" data-fr="Mar" data-zh="周二" data-es="Mar">Tue</div>
+                    <div class="calendar-day header" data-en="Wed" data-fr="Mer" data-zh="周三" data-es="Mié">Wed</div>
+                    <div class="calendar-day header" data-en="Thu" data-fr="Jeu" data-zh="周四" data-es="Jue">Thu</div>
+                    <div class="calendar-day header" data-en="Fri" data-fr="Ven" data-zh="周五" data-es="Vie">Fri</div>
+                    <div class="calendar-day header" data-en="Sat" data-fr="Sam" data-zh="周六" data-es="Sáb">Sat</div>
+
+                    <!-- Calendar days will be populated by JavaScript -->
+                    <!-- Static example for December 2024 -->
+                    <div class="calendar-day">
+                        <div class="day-number">1</div>
+                    </div>
+                    <div class="calendar-day event-day">
+                        <div class="day-number">2</div>
+                        <div class="calendar-event" data-event="city-research">
+                            <div class="event-title" data-en="CITY Research Series" data-fr="Série de Recherche CITY" data-zh="城市研究系列" data-es="Serie de Investigación CITY">CITY Research Series</div>
+                            <div class="event-time">3:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">3</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">4</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">5</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">6</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">7</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">8</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">9</div>
+                    </div>
+                    <div class="calendar-day event-day">
+                        <div class="day-number">10</div>
+                        <div class="calendar-event" data-event="faculty-meeting">
+                            <div class="event-title" data-en="Faculty Meeting" data-fr="Réunion du Corps Professoral" data-zh="教师会议" data-es="Reunión de Facultad">Faculty Meeting</div>
+                            <div class="event-time">2:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">11</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">12</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">13</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">14</div>
+                    </div>
+                    <div class="calendar-day event-day">
+                        <div class="day-number">15</div>
+                        <div class="calendar-event" data-event="open-house">
+                            <div class="event-title" data-en="Open House" data-fr="Portes Ouvertes" data-zh="开放日" data-es="Casa Abierta">Open House</div>
+                            <div class="event-time">10:00 AM</div>
+                        </div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">16</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">17</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">18</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">19</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">20</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">21</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">22</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">23</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">24</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">25</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">26</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">27</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">28</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">29</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">30</div>
+                    </div>
+                    <div class="calendar-day event-day">
+                        <div class="day-number">31</div>
+                        <div class="calendar-event" data-event="new-years">
+                            <div class="event-title" data-en="New Year's Eve" data-fr="Réveillon du Nouvel An" data-zh="除夕" data-es="Nochevieja">New Year's Eve</div>
+                            <div class="event-time">All Day</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-center">
+                    <a href="#" class="btn-primary" data-en="Download Calendar" data-fr="Télécharger le Calendrier" data-zh="下载日历" data-es="Descargar Calendario">Download Calendar</a>
+                    <a href="#" class="btn-secondary" data-en="Subscribe to Calendar" data-fr="S'abonner au Calendrier" data-zh="订阅日历" data-es="Suscribirse al Calendario">Subscribe to Calendar</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Events Archive -->
+        <section class="events-section" id="archive">
+            <div class="archive-section">
+                <div class="section-header">
+                    <h2 data-en="Past Events Archive" data-fr="Archives des Événements Passés" data-zh="过往活动档案" data-es="Archivo de Eventos Pasados">Past Events Archive</h2>
+                    <div class="section-subtitle">
+                        <p data-en="Browse our collection of past events, workshops, and seminars"
+                           data-fr="Parcourez notre collection d'événements, d'ateliers et de séminaires passés"
+                           data-zh="浏览我们过往活动、研讨会和讲座的收藏"
+                           data-es="Explore nuestra colección de eventos, talleres y seminarios pasados">
+                           Browse our collection of past events, workshops, and seminars
+                        </p>
+                    </div>
+                </div>
+
+                <div class="archive-search">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search past events..." data-en="Search past events..." data-fr="Rechercher des événements passés..." data-zh="搜索过往活动..." data-es="Buscar eventos pasados...">
+                        <button class="btn-primary" data-en="Search" data-fr="Rechercher" data-zh="搜索" data-es="Buscar">Search</button>
+                    </div>
+                </div>
+
+                <div class="archive-grid">
+                    <div class="archive-card">
+                        <div class="archive-date">
+                            <i class="far fa-calendar"></i>
+                            <span data-en="November 15, 2024" data-fr="15 Novembre 2024" data-zh="2024年11月15日" data-es="15 de Noviembre 2024">November 15, 2024</span>
+                        </div>
+                        <h3 data-en="Global Education Conference" data-fr="Conférence sur l'Éducation Mondiale" data-zh="全球教育会议" data-es="Conferencia sobre Educación Global">Global Education Conference</h3>
+                        <div class="archive-description">
+                            <p data-en="International conference on the future of global education and cross-cultural learning."
+                               data-fr="Conférence internationale sur l'avenir de l'éducation mondiale et de l'apprentissage interculturel."
+                               data-zh="关于全球教育和跨文化学习未来的国际会议。"
+                               data-es="Conferencia internacional sobre el futuro de la educación global y el aprendizaje intercultural.">
+                               International conference on the future of global education and cross-cultural learning.
+                            </p>
+                        </div>
+                        <div class="archive-actions">
+                            <a href="#" class="btn-secondary" data-en="View Photos" data-fr="Voir les Photos" data-zh="查看照片" data-es="Ver Fotos">View Photos</a>
+                        </div>
+                    </div>
+
+                    <div class="archive-card">
+                        <div class="archive-date">
+                            <i class="far fa-calendar"></i>
+                            <span data-en="October 28, 2024" data-fr="28 Octobre 2024" data-zh="2024年10月28日" data-es="28 de Octubre 2024">October 28, 2024</span>
+                        </div>
+                        <h3 data-en="Research Methodology Workshop" data-fr="Atelier sur la Méthodologie de Recherche" data-zh="研究方法工作坊" data-es="Taller de Metodología de Investigación">Research Methodology Workshop</h3>
+                        <div class="archive-description">
+                            <p data-en="Hands-on workshop on qualitative and quantitative research methods for graduate students."
+                               data-fr="Atelier pratique sur les méthodes de recherche qualitative et quantitative pour les étudiants diplômés."
+                               data-zh="面向研究生的定性和定量研究方法实践工作坊。"
+                               data-es="Taller práctico sobre métodos de investigación cualitativa y cuantitativa para estudiantes de posgrado.">
+                               Hands-on workshop on qualitative and quantitative research methods for graduate students.
+                            </p>
+                        </div>
+                        <div class="archive-actions">
+                            <a href="#" class="btn-secondary" data-en="View Materials" data-fr="Voir le Matériel" data-zh="查看材料" data-es="Ver Materiales">View Materials</a>
+                        </div>
+                    </div>
+
+                    <div class="archive-card">
+                        <div class="archive-date">
+                            <i class="far fa-calendar"></i>
+                            <span data-en="September 10, 2024" data-fr="10 Septembre 2024" data-zh="2024年9月10日" data-es="10 de Septiembre 2024">September 10, 2024</span>
+                        </div>
+                        <h3 data-en="Fall Welcome Reception" data-fr="Réception de Bienvenue d'Automne" data-zh="秋季欢迎招待会" data-es="Recepción de Bienvenida de Otoño">Fall Welcome Reception</h3>
+                        <div class="archive-description">
+                            <p data-en="Welcome event for new students, faculty, and staff starting the fall semester."
+                               data-fr="Événement de bienvenue pour les nouveaux étudiants, professeurs et personnel commençant le semestre d'automne."
+                               data-zh="为开始秋季学期的新学生、教师和工作人员举办的欢迎活动。"
+                               data-es="Evento de bienvenida para nuevos estudiantes, profesores y personal que comienzan el semestre de otoño.">
+                               Welcome event for new students, faculty, and staff starting the fall semester.
+                            </p>
+                        </div>
+                        <div class="archive-actions">
+                            <a href="#" class="btn-secondary" data-en="View Recap" data-fr="Voir le Récapitulatif" data-zh="查看回顾" data-es="Ver Resumen">View Recap</a>
+                        </div>
+                    </div>
+
+                    <div class="archive-card">
+                        <div class="archive-date">
+                            <i class="far fa-calendar"></i>
+                            <span data-en="July 22, 2024" data-fr="22 Juillet 2024" data-zh="2024年7月22日" data-es="22 de Julio 2024">July 22, 2024</span>
+                        </div>
+                        <h3 data-en="Summer Research Symposium" data-fr="Symposium de Recherche d'Été" data-zh="夏季研究研讨会" data-es="Simposio de Investigación de Verano">Summer Research Symposium</h3>
+                        <div class="archive-description">
+                            <p data-en="Showcase of summer research projects by undergraduate and graduate students."
+                               data-fr="Présentation des projets de recherche d'été par les étudiants de premier cycle et des cycles supérieurs."
+                               data-zh="本科生和研究生夏季研究项目展示。"
+                               data-es="Exhibición de proyectos de investigación de verano por estudiantes de pregrado y posgrado.">
+                               Showcase of summer research projects by undergraduate and graduate students.
+                            </p>
+                        </div>
+                        <div class="archive-actions">
+                            <a href="#" class="btn-secondary" data-en="View Abstracts" data-fr="Voir les Résumés" data-zh="查看摘要" data-es="Ver Resúmenes">View Abstracts</a>
+                        </div>
+                    </div>
+
+                    <div class="archive-card">
+                        <div class="archive-date">
+                            <i class="far fa-calendar"></i>
+                            <span data-en="June 5, 2024" data-fr="5 Juin 2024" data-zh="2024年6月5日" data-es="5 de Junio 2024">June 5, 2024</span>
+                        </div>
+                        <h3 data-en="Community Engagement Day" data-fr="Journée d'Engagement Communautaire" data-zh="社区参与日" data-es="Día de Participación Comunitaria">Community Engagement Day</h3>
+                        <div class="archive-description">
+                            <p data-en="Annual event connecting C-IHL with the local Moncton community through service projects."
+                               data-fr="Événement annuel connectant C-IHL avec la communauté locale de Moncton grâce à des projets de service."
+                               data-zh="通过服务项目将C-IHL与当地蒙克顿社区联系起来的年度活动。"
+                               data-es="Evento anual que conecta a C-IHL con la comunidad local de Moncton a través de proyectos de servicio.">
+                               Annual event connecting C-IHL with the local Moncton community through service projects.
+                            </p>
+                        </div>
+                        <div class="archive-actions">
+                            <a href="#" class="btn-secondary" data-en="View Photos" data-fr="Voir les Photos" data-zh="查看照片" data-es="Ver Fotos">View Photos</a>
+                        </div>
+                    </div>
+
+                    <div class="archive-card">
+                        <div class="archive-date">
+                            <i class="far fa-calendar"></i>
+                            <span data-en="May 18, 2024" data-fr="18 Mai 2024" data-zh="2024年5月18日" data-es="18 de Mayo 2024">May 18, 2024</span>
+                        </div>
+                        <h3 data-en="Spring Graduation Ceremony" data-fr="Cérémonie de Remise des Diplômes de Printemps" data-zh="春季毕业典礼" data-es="Ceremonia de Graduación de Primavera">Spring Graduation Ceremony</h3>
+                        <div class="archive-description">
+                            <p data-en="Celebration of our spring graduates' achievements and transition to alumni."
+                               data-fr="Célébration des réalisations de nos diplômés du printemps et de leur transition vers les anciens élèves."
+                               data-zh="庆祝我们春季毕业生的成就并过渡为校友。"
+                               data-es="Celebración de los logros de nuestros graduados de primavera y su transición a exalumnos.">
+                               Celebration of our spring graduates' achievements and transition to alumni.
+                            </p>
+                        </div>
+                        <div class="archive-actions">
+                            <a href="#" class="btn-secondary" data-en="View Ceremony" data-fr="Voir la Cérémonie" data-zh="查看典礼" data-es="Ver Ceremonia">View Ceremony</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-center">
+                    <a href="#" class="btn-primary" data-en="View Full Archive" data-fr="Voir les Archives Complètes" data-zh="查看完整档案" data-es="Ver Archivo Completo">View Full Archive</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 data-en="City Institute of Higher Learning" data-fr="Institut Supérieur de la Ville" data-zh="城市高等学习学院" data-es="Instituto Superior de la Ciudad">City Institute of Higher Learning</h3>
+                    <div class="footer-description">
+                        <p data-en="Advanced research-focused education institute in New Brunswick, Canada."
+                           data-fr="Institut d'éducation axé sur la recherche avancée au Nouveau-Brunswick, Canada."
+                           data-zh="加拿大新不伦瑞克省的高级研究型教育机构。"
+                           data-es="Instituto de educación avanzado centrado en la investigación en New Brunswick, Canadá.">
+                           Advanced research-focused education institute in New Brunswick, Canada.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-en="Programmes" data-fr="Programmes" data-zh="课程" data-es="Programas">Programmes</h3>
+                    <ul class="footer-links">
+                        <li><a href="programs.html" data-en="Academic Diplomas" data-fr="Diplômes Académiques" data-zh="学术文凭" data-es="Diplomas Académicos">Academic Diplomas</a></li>
+                        <li><a href="programs.html" data-en="Executive Education" data-fr="Éducation Exécutive" data-zh="高管教育" data-es="Educación Ejecutiva">Executive Education</a></li>
+                        <li><a href="programs.html" data-en="Community Programmes" data-fr="Programmes Communautaires" data-zh="社区项目" data-es="Programas Comunitarios">Community Programmes</a></li>
+                        <li><a href="programs.html" data-en="Consulting Services" data-fr="Services de Conseil" data-zh="咨询服务" data-es="Servicios de Consultoría">Consulting Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-en="Quick Links" data-fr="Liens Rapides" data-zh="快速链接" data-es="Enlaces Rápidos">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-en="About" data-fr="À propos" data-zh="关于我们" data-es="Acerca de">About</a></li>
+                        <li><a href="research.html" data-en="Research" data-fr="Recherche" data-zh="研究" data-es="Investigación">Research</a></li>
+                        <li><a href="events.html" data-en="Events" data-fr="Événements" data-zh="活动" data-es="Eventos">Events</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-zh="联系我们" data-es="Contacto">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-en="Contact" data-fr="Contact" data-zh="联系我们" data-es="Contacto">Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+15063882833"><i class="fas fa-phone"></i> +1 506 388 2833</a></li>
+                        <li><a href="mailto:admin@city-ihl.ca"><i class="fas fa-envelope"></i> admin@city-ihl.ca</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-en="Moncton, New Brunswick" data-fr="Moncton, Nouveau-Brunswick" data-zh="蒙克顿，新不伦瑞克省" data-es="Moncton, New Brunswick">Moncton, New Brunswick</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 City Institute of Higher Learning. <span data-en="All rights reserved." data-fr="Tous droits réservés." data-zh="版权所有。" data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/events.js"></script>
+</body>
+</html>

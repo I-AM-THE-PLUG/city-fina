@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | City Institute of Higher Learning | Institut Supérieur de la Ville | Contacto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ===== CONTACT PAGE SPECIFIC STYLES ===== */
+        
+        /* Contact Hero Section - Matching Programs Page */
+        .contact-hero {
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--text-dark) 100%);
+            color: var(--white);
+            padding: 120px 0 60px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+        
+        .contact-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        /* Contact Layout */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+        
+        /* Contact Information Cards */
+        .contact-info {
+            background: var(--white);
+            border-radius: var(--card-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-info h2 {
+            color: var(--green-dark);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .info-icon {
+            background: rgba(214, 122, 99, 0.1);
+            color: var(--accent);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .info-content h3 {
+            color: var(--green-dark);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .info-content p {
+            color: var(--text-dark);
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+        
+        .info-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 5px;
+            transition: var(--transition);
+        }
+        
+        .info-link:hover {
+            color: var(--green-dark);
+            text-decoration: underline;
+        }
+        
+        /* Departments List */
+        .departments-list {
+            margin-top: 30px;
+        }
+        
+        .departments-list h4 {
+            color: var(--green-dark);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .dept-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--medium-gray);
+        }
+        
+        .dept-item:last-child {
+            border-bottom: none;
+        }
+        
+        .dept-name {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .dept-email {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .dept-email:hover {
+            text-decoration: underline;
+        }
+        
+        /* Contact Form */
+        .contact-form-section {
+            background: var(--white);
+            border-radius: var(--card-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-form-section h2 {
+            color: var(--green-dark);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .form-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 15px;
+        }
+        
+        .form-tab {
+            padding: 10px 20px;
+            background: transparent;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .form-tab:hover {
+            background: rgba(214, 122, 99, 0.1);
+            color: var(--accent);
+        }
+        
+        .form-tab.active {
+            background: var(--accent);
+            color: var(--white);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--green-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(214, 122, 99, 0.2);
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M8 11.5l-5-5h10l-5 5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            padding-right: 45px;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        /* Apply Now Form (ID target for navigation) */
+        #apply-form {
+            scroll-margin-top: 100px;
+        }
+        
+        /* Map Section */
+        .map-section {
+            margin-bottom: 80px;
+        }
+        
+        .map-container {
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+            background: var(--light-gray);
+            position: relative;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .map-info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            max-width: 350px;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-info h3 {
+            color: var(--green-dark);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .map-info p {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .map-info i {
+            color: var(--accent);
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 80px;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            color: var(--green-dark);
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: var(--light-gray);
+        }
+        
+        .faq-question h3 {
+            color: var(--green-dark);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        
+        .faq-icon {
+            color: var(--accent);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact CTA */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--green-dark), var(--text-dark));
+            color: var(--white);
+            padding: 80px 0;
+            margin-top: 40px;
+            border-radius: 40px 40px 0 0;
+            text-align: center;
+        }
+        
+        .contact-cta h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .contact-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .map-info {
+                position: relative;
+                top: auto;
+                left: auto;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-info, .contact-form-section {
+                padding: 25px;
+            }
+            
+            .info-item {
+                flex-direction: column;
+            }
+            
+            .info-icon {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+            
+            .form-tabs {
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .form-tab {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .faq-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="City Institute of Higher Learning Logo" class="logo-img">
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio">Home</a></li>
+                    <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de">About</a></li>
+                    <li><a href="programs.html" data-en="Programmes" data-fr="Programmes" data-es="Programas">Programs</a></li>
+                    <li><a href="research.html" data-en="Research" data-fr="Recherche" data-es="Investigación">Research</a></li>
+                    <li><a href="events.html" data-en="Events" data-fr="Événements" data-es="Eventos">Events</a></li>
+                    <li><a href="contact.html" class="active" data-en="Contact" data-fr="Contact" data-es="Contacto">Contact</a></li>
+                    <li><a href="#apply-form" class="apply-btn" data-en="Apply Now" data-fr="Postuler" data-es="Aplicar Ahora">Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 data-en="Contact Us" data-fr="Contactez-nous" data-es="Contáctenos">Contact Us</h1>
+            <div class="contact-description">
+                <p data-en="Get in touch with City Institute of Higher Learning. Whether you have questions about our programs, admissions process, or want to schedule a campus visit, our team is here to help you."
+                   data-fr="Entrez en contact avec l'Institut Supérieur de la Ville. Que vous ayez des questions sur nos programmes, le processus d'admission ou que vous souhaitiez planifier une visite du campus, notre équipe est là pour vous aider."
+                   data-es="Póngase en contacto con el Instituto Superior de la Ciudad. Ya sea que tenga preguntas sobre nuestros programas, el proceso de admisión o quiera programar una visita al campus, nuestro equipo está aquí para ayudarlo.">
+                   Get in touch with City Institute of Higher Learning. Whether you have questions about our programs, admissions process, or want to schedule a campus visit, our team is here to help you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Layout -->
+    <div class="container">
+        <div class="contact-layout">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2 data-en="Contact Information" data-fr="Informations de Contact" data-es="Información de Contacto">Contact Information</h2>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3 data-en="Our Location" data-fr="Notre Emplacement" data-es="Nuestra Ubicación">Our Location</h3>
+                        <p data-en="Moncton, New Brunswick, Canada" data-fr="Moncton, Nouveau-Brunswick, Canada" data-es="Moncton, New Brunswick, Canadá">Moncton, New Brunswick, Canada</p>
+                        <a href="#map" class="info-link" data-en="View on Map" data-fr="Voir sur la Carte" data-es="Ver en el Mapa">View on Map</a>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3 data-en="Phone Number" data-fr="Numéro de Téléphone" data-es="Número de Teléfono">Phone Number</h3>
+                        <p>+1 506 388 2833</p>
+                        <a href="tel:+15063882833" class="info-link" data-en="Call Now" data-fr="Appeler Maintenant" data-es="Llamar Ahora">Call Now</a>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3 data-en="Email Address" data-fr="Adresse Email" data-es="Dirección de Correo">Email Address</h3>
+                        <p>admin@city-ihl.ca</p>
+                        <a href="mailto:admin@city-ihl.ca" class="info-link" data-en="Send Email" data-fr="Envoyer un Email" data-es="Enviar Correo">Send Email</a>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3 data-en="Office Hours" data-fr="Heures de Bureau" data-es="Horario de Oficina">Office Hours</h3>
+                        <p data-en="Monday - Friday: 8:30 AM - 4:30 PM" data-fr="Lundi - Vendredi: 8h30 - 16h30" data-es="Lunes - Viernes: 8:30 AM - 4:30 PM">Monday - Friday: 8:30 AM - 4:30 PM</p>
+                        <p data-en="Saturday: 9:00 AM - 12:00 PM" data-fr="Samedi: 9h00 - 12h00" data-es="Sábado: 9:00 AM - 12:00 PM">Saturday: 9:00 AM - 12:00 PM</p>
+                        <p data-en="Sunday: Closed" data-fr="Dimanche: Fermé" data-es="Domingo: Cerrado">Sunday: Closed</p>
+                    </div>
+                </div>
+                
+                <!-- Departments Contact -->
+                <div class="departments-list">
+                    <h4 data-en="Contact Specific Departments" data-fr="Contacter des Départements Spécifiques" data-es="Contactar Departamentos Específicos">Contact Specific Departments</h4>
+                    
+                    <div class="dept-item">
+                        <span class="dept-name" data-en="Admissions" data-fr="Admissions" data-es="Admisiones">Admissions</span>
+                        <a href="mailto:admissions@city-ihl.ca" class="dept-email">admissions@city-ihl.ca</a>
+                    </div>
+                    
+                    <div class="dept-item">
+                        <span class="dept-name" data-en="Student Services" data-fr="Services aux Étudiants" data-es="Servicios Estudiantiles">Student Services</span>
+                        <a href="mailto:studentservices@city-ihl.ca" class="dept-email">studentservices@city-ihl.ca</a>
+                    </div>
+                    
+                    <div class="dept-item">
+                        <span class="dept-name" data-en="Registrar's Office" data-fr="Bureau du Registraire" data-es="Oficina del Registrador">Registrar's Office</span>
+                        <a href="mailto:registrar@city-ihl.ca" class="dept-email">registrar@city-ihl.ca</a>
+                    </div>
+                    
+                    <div class="dept-item">
+                        <span class="dept-name" data-en="Academic Affairs" data-fr="Affaires Académiques" data-es="Asuntos Académicos">Academic Affairs</span>
+                        <a href="mailto:academics@city-ihl.ca" class="dept-email">academics@city-ihl.ca</a>
+                    </div>
+                    
+                    <div class="dept-item">
+                        <span class="dept-name" data-en="International Office" data-fr="Bureau International" data-es="Oficina Internacional">International Office</span>
+                        <a href="mailto:international@city-ihl.ca" class="dept-email">international@city-ihl.ca</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form Section -->
+            <div class="contact-form-section" id="apply-form">
+                <h2 data-en="Send Us a Message" data-fr="Envoyez-nous un Message" data-es="Envíenos un Mensaje">Send Us a Message</h2>
+                
+                <div class="form-tabs">
+                    <button class="form-tab active" data-form="inquiry" data-en="General Inquiry" data-fr="Demande Générale" data-es="Consulta General">General Inquiry</button>
+                    <button class="form-tab" data-form="application" data-en="Program Application" data-fr="Demande de Programme" data-es="Solicitud de Programa">Program Application</button>
+                    <button class="form-tab" data-form="visit" data-en="Campus Visit" data-fr="Visite du Campus" data-es="Visita al Campus">Campus Visit</button>
+                </div>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" data-en="Full Name" data-fr="Nom Complet" data-es="Nombre Completo">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" data-en="Email Address" data-fr="Adresse Email" data-es="Dirección de Correo">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" data-en="Phone Number" data-fr="Numéro de Téléphone" data-es="Número de Teléfono">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                    </div>
+                    
+                    <!-- Program Selection (Shows for Application form) -->
+                    <div class="form-group" id="programGroup">
+                        <label class="form-label" data-en="Program of Interest" data-fr="Programme d'Intérêt" data-es="Programa de Interés">Program of Interest</label>
+                        <select class="form-control" id="program">
+                            <option value="" data-en="Select a program" data-fr="Sélectionnez un programme" data-es="Seleccione un programa">Select a program</option>
+                            <option value="adr-executive" data-en="Executive Diploma in ADR" data-fr="Diplôme Exécutif en RAC" data-es="Diploma Ejecutivo en RAC">Executive Diploma in ADR</option>
+                            <option value="adr-hld" data-en="HLD in ADR" data-fr="DES en RAC" data-es="DES en RAC">HLD in ADR</option>
+                            <option value="research-skills" data-en="HLD in Research Skills" data-fr="DES en Compétences de Recherche" data-es="DES en Habilidades de Investigación">HLD in Research Skills</option>
+                            <option value="languages-diploma" data-en="Advanced Diploma in Languages" data-fr="Diplôme Avancé en Langues" data-es="Diploma Avanzado en Idiomas">Advanced Diploma in Languages</option>
+                            <option value="pgce" data-en="PGCE" data-fr="PGCE" data-es="PGCE">PGCE</option>
+                            <option value="executive-management" data-en="Executive Diploma in Management" data-fr="Diplôme Exécutif en Management" data-es="Diploma Ejecutivo en Gestión">Executive Diploma in Management</option>
+                            <option value="international-management" data-en="HLD in International Management" data-fr="DES en Management International" data-es="DES en Gestión Internacional">HLD in International Management</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Visit Date (Shows for Campus Visit form) -->
+                    <div class="form-group" id="visitDateGroup" style="display: none;">
+                        <label class="form-label" data-en="Preferred Visit Date" data-fr="Date de Visite Préférée" data-es="Fecha de Visita Preferida">Preferred Visit Date</label>
+                        <input type="date" class="form-control" id="visitDate">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" data-en="Subject" data-fr="Sujet" data-es="Asunto">Subject</label>
+                        <input type="text" class="form-control" id="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" data-en="Message" data-fr="Message" data-es="Mensaje">Message</label>
+                        <textarea class="form-control" id="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary" data-en="Send Message" data-fr="Envoyer le Message" data-es="Enviar Mensaje">Send Message</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Map Section -->
+        <section class="map-section" id="map">
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-info">
+                        <h3 data-en="City Institute of Higher Learning" data-fr="Institut Supérieur de la Ville" data-es="Instituto Superior de la Ciudad">City Institute of Higher Learning</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> <span data-en="Moncton, New Brunswick, Canada" data-fr="Moncton, Nouveau-Brunswick, Canada" data-es="Moncton, New Brunswick, Canadá">Moncton, New Brunswick, Canada</span></p>
+                        <p><i class="fas fa-phone"></i> +1 506 388 2833</p>
+                        <p><i class="fas fa-envelope"></i> admin@city-ihl.ca</p>
+                        <p><i class="fas fa-clock"></i> <span data-en="Mon-Fri: 8:30 AM - 4:30 PM" data-fr="Lun-Ven: 8h30 - 16h30" data-es="Lun-Vie: 8:30 AM - 4:30 PM">Mon-Fri: 8:30 AM - 4:30 PM</span></p>
+                        <p style="margin-top: 15px; font-size: 0.9rem; color: var(--accent);" data-en="Directions: Located in the heart of Moncton, easily accessible by public transportation and major highways."
+                           data-fr="Directions: Situé au cœur de Moncton, facilement accessible par les transports en commun et les autoroutes principales."
+                           data-es="Direcciones: Ubicado en el corazón de Moncton, fácilmente accesible por transporte público y carreteras principales.">
+                           Directions: Located in the heart of Moncton, easily accessible by public transportation and major highways.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 data-en="Frequently Asked Questions" data-fr="Foire Aux Questions" data-es="Preguntas Frecuentes">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="What are the admission requirements?" data-fr="Quelles sont les conditions d'admission?" data-es="¿Cuáles son los requisitos de admisión?">What are the admission requirements?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Admission requirements vary by program. Generally, you'll need a completed application form, transcripts from previous studies, a statement of purpose, and proof of language proficiency for programs taught in English or French. Please check the specific requirements for your program of interest."
+                           data-fr="Les conditions d'admission varient selon le programme. Généralement, vous aurez besoin d'un formulaire de candidature complété, des relevés de notes des études antérieures, une lettre de motivation et une preuve de compétence linguistique pour les programmes enseignés en anglais ou en français. Veuillez vérifier les conditions spécifiques pour votre programme d'intérêt."
+                           data-es="Los requisitos de admisión varían según el programa. Generalmente, necesitará un formulario de solicitud completado, transcripciones de estudios anteriores, una declaración de propósito y prueba de competencia lingüística para programas impartidos en inglés o francés. Por favor, consulte los requisitos específicos para su programa de interés.">
+                           Admission requirements vary by program. Generally, you'll need a completed application form, transcripts from previous studies, a statement of purpose, and proof of language proficiency for programs taught in English or French. Please check the specific requirements for your program of interest.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="Do you offer financial aid or scholarships?" data-fr="Offrez-vous une aide financière ou des bourses?" data-es="¿Ofrecen ayuda financiera o becas?">Do you offer financial aid or scholarships?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Yes, we offer various financial aid options and scholarships for eligible students. These include merit-based scholarships, need-based financial aid, and payment plans. Contact our financial aid office at financialaid@city-ihl.ca for more information."
+                           data-fr="Oui, nous offrons diverses options d'aide financière et des bourses pour les étudiants éligibles. Celles-ci incluent des bourses au mérite, une aide financière basée sur les besoins et des plans de paiement. Contactez notre bureau d'aide financière à financialaid@city-ihl.ca pour plus d'informations."
+                           data-es="Sí, ofrecemos varias opciones de ayuda financiera y becas para estudiantes elegibles. Estas incluyen becas por mérito, ayuda financiera basada en necesidades y planes de pago. Contacte nuestra oficina de ayuda financiera en financialaid@city-ihl.ca para obtener más información.">
+                           Yes, we offer various financial aid options and scholarships for eligible students. These include merit-based scholarships, need-based financial aid, and payment plans. Contact our financial aid office at financialaid@city-ihl.ca for more information.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="Can I visit the campus before applying?" data-fr="Puis-je visiter le campus avant de postuler?" data-es="¿Puedo visitar el campus antes de solicitar?">Can I visit the campus before applying?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Absolutely! We encourage prospective students to visit our campus. You can schedule a campus tour by selecting 'Campus Visit' in the contact form above, or by contacting our admissions office directly. We offer both in-person and virtual tour options."
+                           data-fr="Absolument ! Nous encourageons les futurs étudiants à visiter notre campus. Vous pouvez planifier une visite du campus en sélectionnant 'Visite du Campus' dans le formulaire de contact ci-dessus, ou en contactant directement notre bureau des admissions. Nous proposons des options de visite en personne et virtuelle."
+                           data-es="¡Absolutamente! Animamos a los futuros estudiantes a visitar nuestro campus. Puede programar una visita al campus seleccionando 'Visita al Campus' en el formulario de contacto anterior, o contactando directamente nuestra oficina de admisiones. Ofrecemos opciones de visita en persona y virtual.">
+                           Absolutely! We encourage prospective students to visit our campus. You can schedule a campus tour by selecting 'Campus Visit' in the contact form above, or by contacting our admissions office directly. We offer both in-person and virtual tour options.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="What is the application deadline?" data-fr="Quelle est la date limite de candidature?" data-es="¿Cuál es la fecha límite de solicitud?">What is the application deadline?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Application deadlines vary by program and intake period. Most programs have rolling admissions, but we recommend applying at least 3 months before your intended start date to allow time for processing. Check the specific program page or contact admissions for exact deadlines."
+                           data-fr="Les dates limites de candidature varient selon le programme et la période d'admission. La plupart des programmes ont des admissions continues, mais nous recommandons de postuler au moins 3 mois avant votre date de début prévue pour laisser le temps au traitement. Consultez la page du programme spécifique ou contactez les admissions pour les dates limites exactes."
+                           data-es="Las fechas límite de solicitud varían según el programa y el período de ingreso. La mayoría de los programas tienen admisiones continuas, pero recomendamos solicitar al menos 3 meses antes de su fecha de inicio prevista para permitir tiempo para el procesamiento. Consulte la página del programa específico o contacte admisiones para conocer las fechas límite exactas.">
+                           Application deadlines vary by program and intake period. Most programs have rolling admissions, but we recommend applying at least 3 months before your intended start date to allow time for processing. Check the specific program page or contact admissions for exact deadlines.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <h2 data-en="Still Have Questions?" data-fr="Vous avez encore des questions?" data-es="¿Todavía tiene preguntas?">Still Have Questions?</h2>
+            <p data-en="Our dedicated team is ready to assist you with any questions about admissions, programs, or student life at City Institute of Higher Learning."
+               data-fr="Notre équipe dédiée est prête à vous aider avec toutes vos questions concernant les admissions, les programmes ou la vie étudiante à l'Institut Supérieur de la Ville."
+               data-es="Nuestro equipo dedicado está listo para ayudarlo con cualquier pregunta sobre admisiones, programas o vida estudiantil en el Instituto Superior de la Ciudad.">
+               Our dedicated team is ready to assist you with any questions about admissions, programs, or student life at City Institute of Higher Learning.
+            </p>
+            <div class="cta-buttons">
+                <a href="tel:+15063882833" class="btn-light" data-en="Call Us Now" data-fr="Appelez-nous Maintenant" data-es="Llámenos Ahora">Call Us Now</a>
+                <a href="mailto:admin@city-ihl.ca" class="btn-secondary" data-en="Email Us" data-fr="Envoyez-nous un Email" data-es="Envíenos un Correo">Email Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 data-en="City Institute of Higher Learning" data-fr="Institut Supérieur de la Ville" data-es="Instituto Superior de la Ciudad">City Institute of Higher Learning</h3>
+                    <p data-en="Advanced research-focused education institute in New Brunswick, Canada."
+                       data-fr="Institut d'éducation axé sur la recherche avancée au Nouveau-Brunswick, Canada."
+                       data-es="Instituto de educación avanzado centrado en la investigación en New Brunswick, Canadá.">
+                       Advanced research-focused education institute in New Brunswick, Canada.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-en="Programmes" data-fr="Programmes" data-es="Programas">Programmes</h3>
+                    <ul class="footer-links">
+                        <li><a href="programs.html#social-sciences" data-en="Social Sciences" data-fr="Sciences Sociales" data-es="Ciencias Sociales">Social Sciences</a></li>
+                        <li><a href="programs.html#education" data-en="Education" data-fr="Éducation" data-es="Educación">Education</a></li>
+                        <li><a href="programs.html#business" data-en="Business School" data-fr="École de Commerce" data-es="Escuela de Negocios">Business School</a></li>
+                        <li><a href="programs.html" data-en="All Programmes" data-fr="Tous les Programmes" data-es="Todos los Programas">All Programmes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-en="Quick Links" data-fr="Liens Rapides" data-es="Enlaces Rápidos">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio">Home</a></li>
+                        <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de">About</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto">Contact</a></li>
+                        <li><a href="#apply-form" data-en="Apply Now" data-fr="Postuler" data-es="Aplicar Ahora">Apply Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-en="Contact" data-fr="Contact" data-es="Contacto">Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+15063882833"><i class="fas fa-phone"></i> +1 506 388 2833</a></li>
+                        <li><a href="mailto:admin@city-ihl.ca"><i class="fas fa-envelope"></i> admin@city-ihl.ca</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-en="Moncton, New Brunswick" data-fr="Moncton, Nouveau-Brunswick" data-es="Moncton, New Brunswick">Moncton, New Brunswick</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 City Institute of Higher Learning. <span data-en="All rights reserved." data-fr="Tous droits réservés." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Contact Page Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form Tabs Functionality
+            const formTabs = document.querySelectorAll('.form-tab');
+            const programGroup = document.getElementById('programGroup');
+            const visitDateGroup = document.getElementById('visitDateGroup');
+            const contactForm = document.getElementById('contactForm');
+            
+            formTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    formTabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Get form type
+                    const formType = this.getAttribute('data-form');
+                    
+                    // Show/hide form elements based on tab
+                    if (formType === 'application') {
+                        programGroup.style.display = 'block';
+                        visitDateGroup.style.display = 'none';
+                        
+                        // Update form title
+                        document.querySelector('.contact-form-section h2').innerHTML = this.getAttribute('data-en');
+                        
+                        // Update button text
+                        const submitBtn = contactForm.querySelector('button[type="submit"]');
+                        submitBtn.innerHTML = this.getAttribute('data-en') === 'Program Application' ? 
+                            submitBtn.getAttribute('data-en') : submitBtn.innerHTML;
+                    } else if (formType === 'visit') {
+                        programGroup.style.display = 'none';
+                        visitDateGroup.style.display = 'block';
+                        
+                        // Update form title
+                        document.querySelector('.contact-form-section h2').innerHTML = this.getAttribute('data-en');
+                        
+                        // Set minimum date for visit date (tomorrow)
+                        const tomorrow = new Date();
+                        tomorrow.setDate(tomorrow.getDate() + 1);
+                        const formattedDate = tomorrow.toISOString().split('T')[0];
+                        document.getElementById('visitDate').min = formattedDate;
+                    } else {
+                        programGroup.style.display = 'none';
+                        visitDateGroup.style.display = 'none';
+                        
+                        // Update form title
+                        document.querySelector('.contact-form-section h2').innerHTML = this.getAttribute('data-en');
+                    }
+                });
+            });
+            
+            // FAQ Accordion Functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Form Submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const formData = {
+                    name: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value,
+                    formType: document.querySelector('.form-tab.active').getAttribute('data-form')
+                };
+                
+                // Add program if application form
+                if (formData.formType === 'application') {
+                    const programSelect = document.getElementById('program');
+                    formData.program = programSelect.options[programSelect.selectedIndex].text;
+                }
+                
+                // Add visit date if campus visit form
+                if (formData.formType === 'visit') {
+                    formData.visitDate = document.getElementById('visitDate').value;
+                }
+                
+                // In a real implementation, you would send this data to your server
+                console.log('Form submitted:', formData);
+                
+                // Show success message
+                alert('Thank you for your message! We will get back to you soon.');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Reset to general inquiry tab
+                formTabs[0].click();
+            });
+            
+            // Initialize date field for campus visits
+            const visitDateInput = document.getElementById('visitDate');
+            if (visitDateInput) {
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                visitDateInput.min = tomorrow.toISOString().split('T')[0];
+            }
+            
+            // Language switching for form elements
+            function updateFormLanguage(lang) {
+                // Update form labels
+                const labels = document.querySelectorAll('.form-label');
+                labels.forEach(label => {
+                    if (label.getAttribute(`data-${lang}`)) {
+                        label.textContent = label.getAttribute(`data-${lang}`);
+                    }
+                });
+                
+                // Update form tabs
+                formTabs.forEach(tab => {
+                    if (tab.getAttribute(`data-${lang}`)) {
+                        tab.textContent = tab.getAttribute(`data-${lang}`);
+                    }
+                });
+                
+                // Update form button
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                if (submitBtn.getAttribute(`data-${lang}`)) {
+                    submitBtn.textContent = submitBtn.getAttribute(`data-${lang}`);
+                }
+                
+                // Update program options
+                const programOptions = document.querySelectorAll('#program option');
+                programOptions.forEach(option => {
+                    if (option.getAttribute(`data-${lang}`)) {
+                        option.textContent = option.getAttribute(`data-${lang}`);
+                    }
+                });
+            }
+            
+            // Integrate with existing language switcher
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    updateFormLanguage(lang);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

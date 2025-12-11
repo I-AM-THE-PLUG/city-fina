@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmes | City Institute of Higher Learning | Institut Supérieur de la Ville | 课程项目 | Programas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ===== PROGRAMS PAGE SPECIFIC STYLES ===== */
+        
+        /* Programs Hero Section */
+        .programs-hero {
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--text-dark) 100%);
+            color: var(--white);
+            padding: 120px 0 60px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 40px;
+        }
+        
+        .programs-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+        
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        /* Program Filters */
+        .program-filters {
+            background: var(--white);
+            border-radius: var(--card-radius);
+            padding: 25px 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .filter-tab {
+            padding: 10px 20px;
+            background: var(--light-gray);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .filter-tab:hover {
+            background: rgba(214, 122, 99, 0.1);
+            color: var(--accent);
+        }
+        
+        .filter-tab.active {
+            background: var(--accent);
+            color: var(--white);
+        }
+        
+        .school-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .school-btn {
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid var(--medium-gray);
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .school-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        
+        .school-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--white);
+        }
+        
+        /* School Sections */
+        .school-section {
+            margin-bottom: 80px;
+        }
+        
+        .school-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .school-header h2 {
+            color: var(--green-dark);
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+        }
+        
+        .school-subtitle {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            opacity: 0.8;
+        }
+        
+        /* Programs Grid */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .program-card {
+            background: var(--white);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .program-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .program-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .program-card:hover .program-img {
+            transform: scale(1.05);
+        }
+        
+        .program-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(15, 61, 46, 0.9);
+            color: var(--white);
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .program-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .program-header {
+            margin-bottom: 15px;
+        }
+        
+        .program-title {
+            color: var(--green-dark);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+        
+        .program-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .program-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .program-description {
+            color: var(--text-dark);
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        
+        .program-details {
+            background: var(--light-gray);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .detail-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .detail-label {
+            color: var(--green-dark);
+            font-weight: 600;
+        }
+        
+        .detail-value {
+            color: var(--text-dark);
+            opacity: 0.8;
+        }
+        
+        /* Program Actions - UPDATED: Only Apply Now button */
+        .program-actions {
+            text-align: center;
+        }
+        
+        /* CTA Section */
+        .programs-cta {
+            background: linear-gradient(135deg, var(--green-dark), var(--text-dark));
+            color: var(--white);
+            padding: 80px 0;
+            margin-top: 40px;
+            border-radius: 40px 40px 0 0;
+        }
+        
+        .cta-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .cta-description {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .programs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .programs-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .filter-tabs, .school-filter {
+                justify-content: center;
+            }
+            
+            .school-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn-light,
+            .cta-buttons .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-tab, .school-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .program-badge {
+                font-size: 0.8rem;
+                padding: 5px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="City Institute of Higher Learning Logo" class="logo-img">
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" data-en="Home" data-fr="Accueil" data-zh="首页" data-es="Inicio">Home</a></li>
+                    <li><a href="about.html" data-en="About" data-fr="À propos" data-zh="关于我们" data-es="Acerca de">About</a></li>
+                    <li><a href="programs.html" class="active" data-en="Programs" data-fr="Programmes" data-zh="课程项目" data-es="Programas">Programs</a></li>
+                    <li><a href="research.html" data-en="Research" data-fr="Recherche" data-zh="研究" data-es="Investigación">Research</a></li>
+                    <li><a href="events.html" data-en="Events" data-fr="Événements" data-zh="活动" data-es="Eventos">Events</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-zh="联系我们" data-es="Contacto">Contact</a></li>
+                    <li><a href="contact.html#apply-form" class="apply-btn" data-en="Apply Now" data-fr="Postuler" data-zh="立即申请" data-es="Aplicar Ahora">Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Programs Hero -->
+    <section class="programs-hero">
+        <div class="container">
+            <h1 data-en="Our Programs" data-fr="Nos Programmes" data-zh="我们的课程" data-es="Nuestros Programas">Our Programs</h1>
+            <div class="hero-description">
+                <p data-en="Discover our diverse range of academic programs designed to equip you with the knowledge and skills needed for success in today's dynamic world. We offer both long-form and short-form programs across multiple disciplines."
+                   data-fr="Découvrez notre gamme diversifiée de programmes académiques conçus pour vous doter des connaissances et des compétences nécessaires à la réussite dans le monde dynamique d'aujourd'hui. Nous proposons des programmes longs et courts dans plusieurs disciplines."
+                   data-zh="发现我们多样化的学术课程，旨在为您配备在当今动态世界中取得成功所需的知识和技能。我们在多个学科提供长期和短期课程。"
+                   data-es="Descubra nuestra diversa gama de programas académicos diseñados para equiparlo con el conocimiento y las habilidades necesarias para el éxito en el mundo dinámico de hoy. Ofrecemos programas de formato largo y corto en múltiples disciplinas.">
+                   Discover our diverse range of academic programs designed to equip you with the knowledge and skills needed for success in today's dynamic world. We offer both long-form and short-form programs across multiple disciplines.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Filters -->
+    <div class="container">
+        <div class="program-filters">
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all" data-en="All Programs" data-fr="Tous les Programmes" data-zh="所有课程" data-es="Todos los Programas">All Programs</button>
+                <button class="filter-tab" data-filter="social" data-en="Social Sciences & Research" data-fr="Sciences Sociales & Recherche" data-zh="社会科学与研究" data-es="Ciencias Sociales e Investigación">Social Sciences & Research</button>
+                <button class="filter-tab" data-filter="education" data-en="Education & Communication" data-fr="Éducation & Communication" data-zh="教育与传播" data-es="Educación y Comunicación">Education & Communication</button>
+                <button class="filter-tab" data-filter="business" data-en="Business School" data-fr="École de Commerce" data-zh="商学院" data-es="Escuela de Negocios">Business School</button>
+                <button class="filter-tab" data-filter="long" data-en="Long Form Programs" data-fr="Programmes Longs" data-zh="长期课程" data-es="Programas de Formato Largo">Long Form Programs</button>
+                <button class="filter-tab" data-filter="short" data-en="Short Form Programs" data-fr="Programmes Courts" data-zh="短期课程" data-es="Programas de Formato Corto">Short Form Programs</button>
+            </div>
+            
+            <div class="school-filter">
+                <button class="school-btn active" data-school="all" data-en="All Schools" data-fr="Toutes les Écoles" data-zh="所有学院" data-es="Todas las Escuelas">All Schools</button>
+                <button class="school-btn" data-school="social-sciences" data-en="School of Social Sciences" data-fr="École des Sciences Sociales" data-zh="社会科学学院" data-es="Escuela de Ciencias Sociales">School of Social Sciences</button>
+                <button class="school-btn" data-school="education" data-en="School of Education" data-fr="École d'Éducation" data-zh="教育学院" data-es="Escuela de Educación">School of Education</button>
+                <button class="school-btn" data-school="business" data-en="City Business School" data-fr="École de Commerce City" data-zh="城市商学院" data-es="Escuela de Negocios City">City Business School</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Sciences School -->
+    <div class="container">
+        <section class="school-section" id="social-sciences">
+            <div class="school-header">
+                <h2 data-en="School of Social Sciences and Research" data-fr="École des Sciences Sociales et de la Recherche" data-zh="社会科学与研究学院" data-es="Escuela de Ciencias Sociales e Investigación">School of Social Sciences and Research</h2>
+                <p class="school-subtitle" data-en="Advancing knowledge through research and practical application" data-fr="Faire progresser les connaissances par la recherche et l'application pratique" data-zh="通过研究和实际应用推进知识" data-es="Avanzando en el conocimiento a través de la investigación y la aplicación práctica">Advancing knowledge through research and practical application</p>
+            </div>
+
+            <div class="programs-grid">
+                <!-- Program 1 -->
+                <div class="program-card" data-filter="social long" data-school="social-sciences">
+                    <div class="program-image">
+                        <img src="images/adr-executive.jpg" alt="Alternative Dispute Resolution" class="program-img">
+                    </div>
+                    <div class="program-badge" data-en="1 Year • Diploma" data-fr="1 An • Diplôme" data-zh="1年•文凭" data-es="1 Año • Diploma">1 Year • Diploma</div>
+                    <div class="program-content">
+                        <div class="program-header">
+                            <h3 class="program-title" data-en="Executive Diploma in Alternative Dispute Resolution" data-fr="Diplôme Exécutif en Résolution Alternative des Conflits" data-zh="替代性争议解决行政文凭" data-es="Diploma Ejecutivo en Resolución Alternativa de Conflictos">Executive Diploma in Alternative Dispute Resolution</h3>
+                            <div class="program-meta">
+                                <span class="program-duration"><i class="far fa-clock"></i> <span data-en="1 Year" data-fr="1 An" data-zh="1年" data-es="1 Año">1 Year</span></span>
+                                <span class="program-type"><i class="fas fa-graduation-cap"></i> <span data-en="Diploma" data-fr="Diplôme" data-zh="文凭" data-es="Diploma">Diploma</span></span>
+                            </div>
+                        </div>
+                        <div class="program-description">
+                            <p data-en="A comprehensive one-year programme designed to equip participants with in-depth knowledge, practical skills, and a strong theoretical foundation in various methods of resolving disputes outside traditional litigation."
+                               data-fr="Un programme complet d'un an conçu pour doter les participants de connaissances approfondies, de compétences pratiques et d'une solide base théorique dans diverses méthodes de résolution des conflits en dehors des procédures judiciaires traditionnelles."
+                               data-zh="为期一年的综合课程，旨在使参与者掌握传统诉讼之外的各种争议解决方法，具备深入的知识、实践技能和坚实的理论基础。"
+                               data-es="Un programa integral de un año diseñado para equipar a los participantes con conocimientos profundos, habilidades prácticas y una base teórica sólida en varios métodos de resolución de disputas fuera del litigio tradicional.">
+                               A comprehensive one-year programme designed to equip participants with in-depth knowledge, practical skills, and a strong theoretical foundation in various methods of resolving disputes outside traditional litigation.
+                            </p>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Format" data-fr="Format" data-zh="形式" data-es="Formato">Format</span>
+                                <span class="detail-value" data-en="On-campus/Virtual" data-fr="Sur campus/Virtuel" data-zh="校园/虚拟" data-es="En campus/Virtual">On-campus/Virtual</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Language" data-fr="Langue" data-zh="语言" data-es="Idioma">Language</span>
+                                <span class="detail-value" data-en="English, French" data-fr="Anglais, Français" data-zh="英语、法语" data-es="Inglés, Francés">English, French</span>
+                            </div>
+                        </div>
+                        <div class="program-actions">
+                            <a href="contact.html#apply-form" class="btn-primary" data-en="Apply Now" data-fr="Postuler" data-zh="立即申请" data-es="Aplicar Ahora">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="program-card" data-filter="social long" data-school="social-sciences">
+                    <div class="program-image">
+                        <img src="images/adr-hld.jpg" alt="Higher Learning Diploma in ADR" class="program-img">
+                    </div>
+                    <div class="program-badge" data-en="1 Year • Advanced Diploma" data-fr="1 An • Diplôme Avancé" data-zh="1年•高级文凭" data-es="1 Año • Diploma Avanzado">1 Year • Advanced Diploma</div>
+                    <div class="program-content">
+                        <div class="program-header">
+                            <h3 class="program-title" data-en="Higher Learning Diploma in Alternative Dispute Resolution" data-fr="Diplôme d'Études Supérieures en Résolution Alternative des Conflits" data-zh="替代性争议解决高等教育文凭" data-es="Diploma de Educación Superior en Resolución Alternativa de Conflictos">Higher Learning Diploma in Alternative Dispute Resolution</h3>
+                            <div class="program-meta">
+                                <span class="program-duration"><i class="far fa-clock"></i> <span data-en="1 Year" data-fr="1 An" data-zh="1年" data-es="1 Año">1 Year</span></span>
+                                <span class="program-type"><i class="fas fa-graduation-cap"></i> <span data-en="Advanced Diploma" data-fr="Diplôme Avancé" data-zh="高级文凭" data-es="Diploma Avanzado">Advanced Diploma</span></span>
+                            </div>
+                        </div>
+                        <div class="program-description">
+                            <p data-en="An advanced programme with research component for those seeking comprehensive knowledge in dispute resolution methods with a focus on mediation, arbitration, negotiation, and conciliation."
+                               data-fr="Un programme avancé avec composante de recherche pour ceux qui cherchent une connaissance complète des méthodes de résolution des conflits avec un accent sur la médiation, l'arbitrage, la négociation et la conciliation."
+                               data-zh="面向寻求全面了解争议解决方法，专注于调解、仲裁、谈判和调解的研究组成部分的高级课程。"
+                               data-es="Un programa avanzado con componente de investigación para aquellos que buscan un conocimiento integral en métodos de resolución de disputas con un enfoque en mediación, arbitraje, negociación y conciliación.">
+                               An advanced programme with research component for those seeking comprehensive knowledge in dispute resolution methods with a focus on mediation, arbitration, negotiation, and conciliation.
+                            </p>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Format" data-fr="Format" data-zh="形式" data-es="Formato">Format</span>
+                                <span class="detail-value" data-en="On-campus/Virtual" data-fr="Sur campus/Virtuel" data-zh="校园/虚拟" data-es="En campus/Virtual">On-campus/Virtual</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Language" data-fr="Langue" data-zh="语言" data-es="Idioma">Language</span>
+                                <span class="detail-value" data-en="English, French" data-fr="Anglais, Français" data-zh="英语、法语" data-es="Inglés, Francés">English, French</span>
+                            </div>
+                        </div>
+                        <div class="program-actions">
+                            <a href="contact.html#apply-form" class="btn-primary" data-en="Apply Now" data-fr="Postuler" data-zh="立即申请" data-es="Aplicar Ahora">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 3 - Post Doctoral Experience -->
+                <div class="program-card" data-filter="social research" data-school="social-sciences">
+                    <div class="program-image">
+                        <img src="images/post-doc.jpg" alt="Post Doctoral Experience" class="program-img">
+                    </div>
+                    <div class="program-badge" data-en="3-12 Months • Research" data-fr="3-12 Mois • Recherche" data-zh="3-12个月•研究" data-es="3-12 Meses • Investigación">3-12 Months • Research</div>
+                    <div class="program-content">
+                        <div class="program-header">
+                            <h3 class="program-title" data-en="Post Doctoral Experience" data-fr="Expérience Post-Doctorale" data-zh="博士后经验" data-es="Experiencia Postdoctoral">Post Doctoral Experience</h3>
+                            <div class="program-meta">
+                                <span class="program-duration"><i class="far fa-clock"></i> <span data-en="3-12 Months" data-fr="3-12 Mois" data-zh="3-12个月" data-es="3-12 Meses">3-12 Months</span></span>
+                                <span class="program-type"><i class="fas fa-flask"></i> <span data-en="Research" data-fr="Recherche" data-zh="研究" data-es="Investigación">Research</span></span>
+                            </div>
+                        </div>
+                        <div class="program-description">
+                            <p data-en="Put your research into practice as a visiting scholar. Work with our research team to develop your thesis into publishable papers or pursue new research topics."
+                               data-fr="Mettez votre recherche en pratique en tant que chercheur invité. Travaillez avec notre équipe de recherche pour développer votre thèse en articles publiables ou poursuivez de nouveaux sujets de recherche."
+                               data-zh="作为访问学者将您的研究付诸实践。与我们的研究团队合作，将您的论文发展成为可发表的论文，或追求新的研究课题。"
+                               data-es="Ponga su investigación en práctica como investigador visitante. Trabaje con nuestro equipo de investigación para desarrollar su tesis en artículos publicables o persiga nuevos temas de investigación.">
+                               Put your research into practice as a visiting scholar. Work with our research team to develop your thesis into publishable papers or pursue new research topics.
+                            </p>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Format" data-fr="Format" data-zh="形式" data-es="Formato">Format</span>
+                                <span class="detail-value" data-en="On-campus" data-fr="Sur campus" data-zh="校园" data-es="En campus">On-campus</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Research Focus" data-fr="Focus Recherche" data-zh="研究重点" data-es="Enfoque de Investigación">Research Focus</span>
+                                <span class="detail-value" data-en="Social Sciences" data-fr="Sciences Sociales" data-zh="社会科学" data-es="Ciencias Sociales">Social Sciences</span>
+                            </div>
+                        </div>
+                        <div class="program-actions">
+                            <a href="contact.html" class="btn-primary" data-en="Inquire Now" data-fr="Renseignements" data-zh="立即咨询" data-es="Consultar Ahora">Inquire Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 4 - HLD in Research Skills -->
+                <div class="program-card" data-filter="social long" data-school="social-sciences">
+                    <div class="program-image">
+                        <img src="images/research-skills.jpg" alt="Research Skills" class="program-img">
+                    </div>
+                    <div class="program-badge" data-en="1 Year • Advanced Diploma" data-fr="1 An • Diplôme Avancé" data-zh="1年•高级文凭" data-es="1 Año • Diploma Avanzado">1 Year • Advanced Diploma</div>
+                    <div class="program-content">
+                        <div class="program-header">
+                            <h3 class="program-title" data-en="Higher Learning Diploma in Research Skills" data-fr="Diplôme d'Études Supérieures en Compétences de Recherche" data-zh="研究技能高等教育文凭" data-es="Diploma de Educación Superior en Habilidades de Investigación">Higher Learning Diploma in Research Skills</h3>
+                            <div class="program-meta">
+                                <span class="program-duration"><i class="far fa-clock"></i> <span data-en="1 Year" data-fr="1 An" data-zh="1年" data-es="1 Año">1 Year</span></span>
+                                <span class="program-type"><i class="fas fa-graduation-cap"></i> <span data-en="Advanced Diploma" data-fr="Diplôme Avancé" data-zh="高级文凭" data-es="Diploma Avanzado">Advanced Diploma</span></span>
+                            </div>
+                        </div>
+                        <div class="program-description">
+                            <p data-en="For those who wish to work as social researchers and consultants. Advanced understanding of quantitative and qualitative research methodologies."
+                               data-fr="Pour ceux qui souhaitent travailler comme chercheurs sociaux et consultants. Compréhension avancée des méthodologies de recherche quantitative et qualitative."
+                               data-zh="面向希望担任社会研究者和顾问的人员。深入了解定量和定性研究方法论。"
+                               data-es="Para aquellos que deseen trabajar como investigadores sociales y consultores. Comprensión avanzada de metodologías de investigación cuantitativa y cualitativa.">
+                               For those who wish to work as social researchers and consultants. Advanced understanding of quantitative and qualitative research methodologies.
+                            </p>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Format" data-fr="Format" data-zh="形式" data-es="Formato">Format</span>
+                                <span class="detail-value" data-en="On-campus/Virtual" data-fr="Sur campus/Virtuel" data-zh="校园/虚拟" data-es="En campus/Virtual">On-campus/Virtual</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Focus" data-fr="Focus" data-zh="重点" data-es="Enfoque">Focus</span>
+                                <span class="detail-value" data-en="Research Methods" data-fr="Méthodes de Recherche" data-zh="研究方法" data-es="Métodos de Investigación">Research Methods</span>
+                            </div>
+                        </div>
+                        <div class="program-actions">
+                            <a href="contact.html#apply-form" class="btn-primary" data-en="Apply Now" data-fr="Postuler" data-zh="立即申请" data-es="Aplicar Ahora">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education School -->
+        <section class="school-section" id="education">
+            <div class="school-header">
+                <h2 data-en="School of Education and International Communication" data-fr="École d'Éducation et de Communication Internationale" data-zh="教育与国际传播学院" data-es="Escuela de Educación y Comunicación Internacional">School of Education and International Communication</h2>
+                <p class="school-subtitle" data-en="Developing educators and communicators for a globalized world" data-fr="Former des éducateurs et communicateurs pour un monde globalisé" data-zh="为全球化世界培养教育者和传播者" data-es="Desarrollando educadores y comunicadores para un mundo globalizado">Developing educators and communicators for a globalized world</p>
+            </div>
+
+            <div class="programs-grid">
+                <!-- Program 5 - Advanced Diploma in Languages -->
+                <div class="program-card" data-filter="education long" data-school="education">
+                    <div class="program-image">
+                        <img src="images/languages-diploma.jpg" alt="Languages for International Communication" class="program-img">
+                    </div>
+                    <div class="program-badge" data-en="1 Year • Advanced Diploma" data-fr="1 An • Diplôme Avancé" data-zh="1年•高级文凭" data-es="1 Año • Diploma Avanzado">1 Year • Advanced Diploma</div>
+                    <div class="program-content">
+                        <div class="program-header">
+                            <h3 class="program-title" data-en="Advanced Diploma in Languages for International Communication" data-fr="Diplôme Avancé en Langues pour la Communication Internationale" data-zh="国际传播语言高级文凭" data-es="Diploma Avanzado en Idiomas para la Comunicación Internacional">Advanced Diploma in Languages for International Communication</h3>
+                            <div class="program-meta">
+                                <span class="program-duration"><i class="far fa-clock"></i> <span data-en="1 Year" data-fr="1 An" data-zh="1年" data-es="1 Año">1 Year</span></span>
+                                <span class="program-type"><i class="fas fa-graduation-cap"></i> <span data-en="Advanced Diploma" data-fr="Diplôme Avancé" data-zh="高级文凭" data-es="Diploma Avanzado">Advanced Diploma</span></span>
+                            </div>
+                        </div>
+                        <div class="program-description">
+                            <p data-en="Convert your language skills into employability assets. Available in English, French, Spanish, Arabic, and Chinese Mandarin."
+                               data-fr="Transformez vos compétences linguistiques en atouts pour l'emploi. Disponible en anglais, français, espagnol, arabe et chinois mandarin."
+                               data-zh="将您的语言技能转化为就业资本。提供英语、法语、西班牙语、阿拉伯语和中文普通话课程。"
+                               data-es="Convierta sus habilidades lingüísticas en activos de empleabilidad. Disponible en inglés, francés, español, árabe y chino mandarín.">
+                               Convert your language skills into employability assets. Available in English, French, Spanish, Arabic, and Chinese Mandarin.
+                            </p>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Format" data-fr="Format" data-zh="形式" data-es="Formato">Format</span>
+                                <span class="detail-value" data-en="On-campus/Virtual" data-fr="Sur campus/Virtuel" data-zh="校园/虚拟" data-es="En campus/Virtual">On-campus/Virtual</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Languages" data-fr="Langues" data-zh="语言" data-es="Idiomas">Languages</span>
+                                <span class="detail-value" data-en="English, French, Spanish, Arabic, Chinese" data-fr="Anglais, Français, Espagnol, Arabe, Chinois" data-zh="英语、法语、西班牙语、阿拉伯语、中文" data-es="Inglés, Francés, Español, Árabe, Chino">English, French, Spanish, Arabic, Chinese</span>
+                            </div>
+                        </div>
+                        <div class="program-actions">
+                            <a href="contact.html#apply-form" class="btn-primary" data-en="Apply Now" data-fr="Postuler" data-zh="立即申请" data-es="Aplicar Ahora">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 6 - PGCE -->
+                <div class="program-card" data-filter="education long" data-school="education">
+                    <div class="program-image">
+                        <img src="images/pgce.jpg" alt="Postgraduate Certificate in Education" class="program-img">
+                    </div>
+                    <div class="program-badge" data-en="1 Year • Certificate" data-fr="1 An • Certificat" data-zh="1年•证书" data-es="1 Año • Certificado">1 Year • Certificate</div>
+                    <div class="program-content">
+                        <div class="program-header">
+                            <h3 class="program-title" data-en="Postgraduate Certificate in Education (PGCE)" data-fr="Certificat d'Études Supérieures en Éducation (PGCE)" data-zh="教育学研究生证书（PGCE）" data-es="Certificado de Posgrado en Educación (PGCE)">Postgraduate Certificate in Education (PGCE)</h3>
+                            <div class="program-meta">
+                                <span class="program-duration"><i class="far fa-clock"></i> <span data-en="1 Year" data-fr="1 An" data-zh="1年" data-es="1 Año">1 Year</span></span>
+                                <span class="program-type"><i class="fas fa-graduation-cap"></i> <span data-en="Certificate" data-fr="Certificat" data-zh="证书" data-es="Certificado">Certificate</span></span>
+                            </div>
+                        </div>
+                        <div class="program-description">
+                            <p data-en="Prepares candidates to teach in various educational settings: secondary, postsecondary and industry with specialized pathways."
+                               data-fr="Prépare les candidats à enseigner dans divers contextes éducatifs : secondaire, postsecondaire et industrie avec des parcours spécialisés."
+                               data-zh="培养候选人在各种教育环境中教学：中学、高等教育和行业，具有专业路径。"
+                               data-es="Prepara a los candidatos para enseñar en diversos entornos educativos: secundaria, postsecundaria e industria con vías especializadas.">
+                               Prepares candidates to teach in various educational settings: secondary, postsecondary and industry with specialized pathways.
+                            </p>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Format" data-fr="Format" data-zh="形式" data-es="Formato">Format</span>
+                                <span class="detail-value" data-en="On-campus/Virtual" data-fr="Sur campus/Virtuel" data-zh="校园/虚拟" data-es="En campus/Virtual">On-campus/Virtual</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Specializations" data-fr="Spécialisations" data-zh="专业方向" data-es="Especializaciones">Specializations</span>
+                                <span class="detail-value" data-en="Multiple Pathways" data-fr="Multiples Parcours" data-zh="多种路径" data-es="Múltiples Vías">Multiple Pathways</span>
+                            </div>
+                        </div>
+                        <div class="program-actions">
+                            <a href="contact.html#apply-form" class="btn-primary" data-en="Apply Now" data-fr="Postuler" data-zh="立即申请" data-es="Aplicar Ahora">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business School -->
+        <section class="school-section" id="business">
+            <div class="school-header">
+                <h2 data-en="City Business School" data-fr="École de Commerce City" data-zh="城市商学院" data-es="Escuela de Negocios City">City Business School</h2>
+                <p class="school-subtitle" data-en="Developing business leaders for tomorrow's challenges" data-fr="Former des leaders d'entreprise pour les défis de demain" data-zh="为明天的挑战培养商业领袖" data-es="Desarrollando líderes empresariales para los desafíos del mañana">Developing business leaders for tomorrow's challenges</p>
+            </div>
+
+            <div class="programs-grid">
+                <!-- Program 7 - Executive Diploma in Management -->
+                <div class="program-card" data-filter="business long" data-school="business">
+                    <div class="program-image">
+                        <img src="images/executive-management.jpg" alt="Executive Management" class="program-img">
+                    </div>
+                    <div class="program-badge" data-en="1 Year • Diploma" data-fr="1 An • Diplôme" data-zh="1年•文凭" data-es="1 Año • Diploma">1 Year • Diploma</div>
+                    <div class="program-content">
+                        <div class="program-header">
+                            <h3 class="program-title" data-en="Executive Diploma in Management (EDM)" data-fr="Diplôme Exécutif en Management (EDM)" data-zh="管理行政文凭（EDM）" data-es="Diploma Ejecutivo en Gestión (EDM)">Executive Diploma in Management (EDM)</h3>
+                            <div class="program-meta">
+                                <span class="program-duration"><i class="far fa-clock"></i> <span data-en="1 Year" data-fr="1 An" data-zh="1年" data-es="1 Año">1 Year</span></span>
+                                <span class="program-type"><i class="fas fa-graduation-cap"></i> <span data-en="Diploma" data-fr="Diplôme" data-zh="文凭" data-es="Diploma">Diploma</span></span>
+                            </div>
+                        </div>
+                        <div class="program-description">
+                            <p data-en="Develop executive expertise in modern managerial practice with specializations in Marketing, HR, Logistics, or Supply Chain Management."
+                               data-fr="Développez une expertise exécutive dans la pratique managériale moderne avec des spécialisations en Marketing, RH, Logistique ou Gestion de la Chaîne d'Approvisionnement."
+                               data-zh="在现代管理实践中培养行政专业知识，专攻市场营销、人力资源、物流或供应链管理。"
+                               data-es="Desarrolle experiencia ejecutiva en la práctica gerencial moderna con especializaciones en Marketing, RRHH, Logística o Gestión de la Cadena de Suministro.">
+                               Develop executive expertise in modern managerial practice with specializations in Marketing, HR, Logistics, or Supply Chain Management.
+                            </p>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Format" data-fr="Format" data-zh="形式" data-es="Formato">Format</span>
+                                <span class="detail-value" data-en="On-campus/Virtual" data-fr="Sur campus/Virtuel" data-zh="校园/虚拟" data-es="En campus/Virtual">On-campus/Virtual</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Specializations" data-fr="Spécialisations" data-zh="专业方向" data-es="Especializaciones">Specializations</span>
+                                <span class="detail-value" data-en="Marketing, HR, Logistics, Supply Chain" data-fr="Marketing, RH, Logistique, Chaîne d'Approvisionnement" data-zh="市场营销、人力资源、物流、供应链" data-es="Marketing, RRHH, Logística, Cadena de Suministro">Marketing, HR, Logistics, Supply Chain</span>
+                            </div>
+                        </div>
+                        <div class="program-actions">
+                            <a href="contact.html#apply-form" class="btn-primary" data-en="Apply Now" data-fr="Postuler" data-zh="立即申请" data-es="Aplicar Ahora">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 8 - HLD in International Management -->
+                <div class="program-card" data-filter="business long" data-school="business">
+                    <div class="program-image">
+                        <img src="images/international-management.jpg" alt="International Management" class="program-img">
+                    </div>
+                    <div class="program-badge" data-en="1 Year • Advanced Diploma" data-fr="1 An • Diplôme Avancé" data-zh="1年•高级文凭" data-es="1 Año • Diploma Avanzado">1 Year • Advanced Diploma</div>
+                    <div class="program-content">
+                        <div class="program-header">
+                            <h3 class="program-title" data-en="Higher Learning Diploma in International Management" data-fr="Diplôme d'Études Supérieures en Management International" data-zh="国际管理高等教育文凭" data-es="Diploma de Educación Superior en Gestión Internacional">Higher Learning Diploma in International Management</h3>
+                            <div class="program-meta">
+                                <span class="program-duration"><i class="far fa-clock"></i> <span data-en="1 Year" data-fr="1 An" data-zh="1年" data-es="1 Año">1 Year</span></span>
+                                <span class="program-type"><i class="fas fa-graduation-cap"></i> <span data-en="Advanced Diploma" data-fr="Diplôme Avancé" data-zh="高级文凭" data-es="Diploma Avanzado">Advanced Diploma</span></span>
+                            </div>
+                        </div>
+                        <div class="program-description">
+                            <p data-en="For applicants with managerial experience, focusing on global business management with significant research component."
+                               data-fr="Pour les candidats ayant une expérience managériale, se concentrant sur la gestion des affaires internationales avec une composante de recherche significative."
+                               data-zh="面向具有管理经验的申请者，专注于全球商业管理，具有重要的研究组成部分。"
+                               data-es="Para solicitantes con experiencia gerencial, enfocándose en la gestión empresarial global con un componente de investigación significativo.">
+                               For applicants with managerial experience, focusing on global business management with significant research component.
+                            </p>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Format" data-fr="Format" data-zh="形式" data-es="Formato">Format</span>
+                                <span class="detail-value" data-en="On-campus/Virtual" data-fr="Sur campus/Virtuel" data-zh="校园/虚拟" data-es="En campus/Virtual">On-campus/Virtual</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label" data-en="Focus" data-fr="Focus" data-zh="重点" data-es="Enfoque">Focus</span>
+                                <span class="detail-value" data-en="Global Business Management" data-fr="Gestion des Affaires Internationales" data-zh="全球商业管理" data-es="Gestión Empresarial Global">Global Business Management</span>
+                            </div>
+                        </div>
+                        <div class="program-actions">
+                            <a href="contact.html#apply-form" class="btn-primary" data-en="Apply Now" data-fr="Postuler" data-zh="立即申请" data-es="Aplicar Ahora">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Call to Action -->
+    <section class="programs-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-en="Ready to Start Your Journey?" data-fr="Prêt à Commencer Votre Parcours ?" data-zh="准备开始您的旅程了吗？" data-es="¿Listo para Comenzar su Viaje?">Ready to Start Your Journey?</h2>
+                <div class="cta-description">
+                    <p data-en="Contact our admissions team to learn more about our programs and find the perfect fit for your academic and career goals."
+                       data-fr="Contactez notre équipe des admissions pour en savoir plus sur nos programmes et trouver celui qui correspond parfaitement à vos objectifs académiques et professionnels."
+                       data-zh="联系我们的招生团队，了解更多关于我们的课程信息，找到最适合您学术和职业目标的课程。"
+                       data-es="Contacte a nuestro equipo de admisiones para obtener más información sobre nuestros programas y encontrar el adecuado para sus objetivos académicos y profesionales.">
+                       Contact our admissions team to learn more about our programs and find the perfect fit for your academic and career goals.
+                    </p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-light" data-en="Contact Admissions" data-fr="Contacter les Admissions" data-zh="联系招生处" data-es="Contactar Admisiones">Contact Admissions</a>
+                    <a href="contact.html" class="btn-secondary" data-en="Request Information" data-fr="Demander des Renseignements" data-zh="请求信息" data-es="Solicitar Información">Request Information</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 data-en="City Institute of Higher Learning" data-fr="Institut Supérieur de la Ville" data-zh="城市高等学习学院" data-es="Instituto Superior de la Ciudad">City Institute of Higher Learning</h3>
+                    <p data-en="Advanced research-focused education institute in New Brunswick, Canada."
+                       data-fr="Institut d'éducation axé sur la recherche avancée au Nouveau-Brunswick, Canada."
+                       data-zh="加拿大新不伦瑞克省的高级研究型教育机构。"
+                       data-es="Instituto de educación avanzado centrado en la investigación en New Brunswick, Canadá.">
+                       Advanced research-focused education institute in New Brunswick, Canada.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-en="Programmes" data-fr="Programmes" data-zh="课程" data-es="Programas">Programmes</h3>
+                    <ul class="footer-links">
+                        <li><a href="programs.html#social-sciences" data-en="Social Sciences" data-fr="Sciences Sociales" data-zh="社会科学" data-es="Ciencias Sociales">Social Sciences</a></li>
+                        <li><a href="programs.html#education" data-en="Education" data-fr="Éducation" data-zh="教育" data-es="Educación">Education</a></li>
+                        <li><a href="programs.html#business" data-en="Business School" data-fr="École de Commerce" data-zh="商学院" data-es="Escuela de Negocios">Business School</a></li>
+                        <li><a href="programs.html" data-en="All Programmes" data-fr="Tous les Programmes" data-zh="所有课程" data-es="Todos los Programas">All Programmes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-en="Quick Links" data-fr="Liens Rapides" data-zh="快速链接" data-es="Enlaces Rápidos">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-en="Home" data-fr="Accueil" data-zh="首页" data-es="Inicio">Home</a></li>
+                        <li><a href="about.html" data-en="About" data-fr="À propos" data-zh="关于我们" data-es="Acerca de">About</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-zh="联系我们" data-es="Contacto">Contact</a></li>
+                        <li><a href="contact.html#apply-form" data-en="Apply Now" data-fr="Postuler" data-zh="立即申请" data-es="Aplicar Ahora">Apply Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-en="Contact" data-fr="Contact" data-zh="联系我们" data-es="Contacto">Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+15063882833"><i class="fas fa-phone"></i> +1 506 388 2833</a></li>
+                        <li><a href="mailto:admin@city-ihl.ca"><i class="fas fa-envelope"></i> admin@city-ihl.ca</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-en="Moncton, New Brunswick" data-fr="Moncton, Nouveau-Brunswick" data-zh="蒙克顿，新不伦瑞克省" data-es="Moncton, New Brunswick">Moncton, New Brunswick</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 City Institute of Higher Learning. <span data-en="All rights reserved." data-fr="Tous droits réservés." data-zh="版权所有。" data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Programs Page Filtering Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all programs, filter tabs, and school buttons
+            const programCards = document.querySelectorAll('.program-card');
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const schoolButtons = document.querySelectorAll('.school-btn');
+            const schoolSections = document.querySelectorAll('.school-section');
+            
+            // Set initial filter states
+            let activeFilter = 'all';
+            let activeSchool = 'all';
+            
+            // Function to update URL without page reload
+            function updateURL() {
+                const params = new URLSearchParams();
+                if (activeFilter !== 'all') params.set('filter', activeFilter);
+                if (activeSchool !== 'all') params.set('school', activeSchool);
+                
+                const newURL = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
+                window.history.replaceState({}, '', newURL);
+            }
+            
+            // Function to filter programs
+            function filterPrograms() {
+                let hasVisibleCards = false;
+                
+                programCards.forEach(card => {
+                    const cardFilters = card.getAttribute('data-filter').split(' ');
+                    const cardSchool = card.getAttribute('data-school');
+                    
+                    let showCard = true;
+                    
+                    // Apply filter tab filtering
+                    if (activeFilter !== 'all') {
+                        showCard = cardFilters.includes(activeFilter);
+                    }
+                    
+                    // Apply school filtering
+                    if (activeSchool !== 'all') {
+                        showCard = showCard && (cardSchool === activeSchool);
+                    }
+                    
+                    // Show/hide card with animation
+                    if (showCard) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                        hasVisibleCards = true;
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+                
+                // Show/hide school sections based on visible cards
+                schoolSections.forEach(section => {
+                    const sectionId = section.getAttribute('id');
+                    const sectionCards = section.querySelectorAll('.program-card');
+                    let sectionHasVisibleCards = false;
+                    
+                    sectionCards.forEach(card => {
+                        if (card.style.display !== 'none') {
+                            sectionHasVisibleCards = true;
+                        }
+                    });
+                    
+                    if (sectionHasVisibleCards) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+                
+                // Show message if no programs match filters
+                const noResultsMessage = document.getElementById('no-results-message');
+                if (!hasVisibleCards) {
+                    if (!noResultsMessage) {
+                        const message = document.createElement('div');
+                        message.id = 'no-results-message';
+                        message.style.textAlign = 'center';
+                        message.style.padding = '50px 20px';
+                        message.style.color = 'var(--text-dark)';
+                        message.style.opacity = '0.8';
+                        message.innerHTML = `
+                            <h3 style="margin-bottom: 15px; color: var(--green-dark);">No programs match your filters</h3>
+                            <p>Try selecting different filters to see more programs.</p>
+                            <button class="btn-primary" style="margin-top: 20px;" onclick="resetFilters()">Reset All Filters</button>
+                        `;
+                        document.querySelector('.container').appendChild(message);
+                    }
+                } else if (noResultsMessage) {
+                    noResultsMessage.remove();
+                }
+            }
+            
+            // Add click event listeners to filter tabs
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all filter tabs
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    // Update active filter
+                    activeFilter = this.getAttribute('data-filter');
+                    // Apply filters
+                    filterPrograms();
+                    // Update URL
+                    updateURL();
+                });
+            });
+            
+            // Add click event listeners to school buttons
+            schoolButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all school buttons
+                    schoolButtons.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    // Update active school
+                    activeSchool = this.getAttribute('data-school');
+                    // Apply filters
+                    filterPrograms();
+                    // Update URL
+                    updateURL();
+                    
+                    // Scroll to school section if a specific school is selected
+                    if (activeSchool !== 'all') {
+                        const section = document.getElementById(activeSchool);
+                        if (section) {
+                            window.scrollTo({
+                                top: section.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Check URL parameters on page load
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlFilter = urlParams.get('filter');
+            const urlSchool = urlParams.get('school');
+            
+            if (urlFilter) {
+                const tab = document.querySelector(`.filter-tab[data-filter="${urlFilter}"]`);
+                if (tab) {
+                    tab.click();
+                }
+            }
+            
+            if (urlSchool) {
+                const button = document.querySelector(`.school-btn[data-school="${urlSchool}"]`);
+                if (button) {
+                    button.click();
+                }
+            }
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#') && href !== '#') {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            // If clicking on a school link, activate that school filter
+                            if (['social-sciences', 'education', 'business'].includes(targetId)) {
+                                const schoolButton = document.querySelector(`.school-btn[data-school="${targetId}"]`);
+                                if (schoolButton) {
+                                    schoolButton.click();
+                                }
+                            }
+                            
+                            // Smooth scroll to element
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Global reset filters function
+            window.resetFilters = function() {
+                const allTab = document.querySelector('.filter-tab[data-filter="all"]');
+                const allSchool = document.querySelector('.school-btn[data-school="all"]');
+                
+                if (allTab) allTab.click();
+                if (allSchool) allSchool.click();
+                
+                const noResultsMessage = document.getElementById('no-results-message');
+                if (noResultsMessage) {
+                    noResultsMessage.remove();
+                }
+            };
+        });
+    </script>
+</body>   
+</html>
